@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>111111111</li>
+        <li>333333333</li>
+    </ul>
+    <ol>
+        <li>2222</li>
+    </ol>
+    <script>
+        $(function() {
+            //1).单个事件注册
+            /*
+             $('div').click(function(){
+                 console.log(11);
+                 $(this).css('color','red');
+             })
+             $('div').mouseenter(function(){
+                 console.log(11);
+                 $(this).css('color','red');
+             })
+             */
+
+            /*
+            $('div').on({
+                click: function() {
+                    $(this).css('color', 'red');
+                },
+                mouseenter: function() {
+                    $(this).css('color', 'red');
+                },
+            });
+           
+            $('div').on('mouseenter click', function() {
+                $(this).toggleClass('current');
+            })
+             */
+            //-------------------------------------------------------------------------
+            //on()优势，可以事件委派操作：把原来子元素身上的事件绑定在父元素身上，把事件委派给父元素
+            //之前有bind(),live(),delegate()等方法处理事件委派，最新版本用on处理
+            //2）on实现事件委派（委派）
+            $('ul').on('click', 'li', function() {
+                    alert(11);
+                })
+                //----------------------------------------------
+                //click是绑定在ul身上的，但触发对象是ul里的li
+                //3）on我可以给未来动态创建的元素绑定事件
+                /*
+            $('ol li').click(function() {
+                alert(11);
+            })*/
+            $('ol').on('click', 'li', function() {
+                alert(22);
+            })
+            var li = $('<li>w是后面来的li</li>');
+            $('ol').append(li);
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "懂你找图",
+  "pullRefresh": false,
+  "usingComponents": {
+    "uni-segmented-control": "/node-modules/npm-scope-dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control",
+    "home-recommend": "/pages/home/home-recommend/index",
+    "home-album": "/pages/home/home-album/index",
+    "home-category": "/pages/home/home-category/index",
+    "home-new": "/pages/home/home-new/index"
+  }
+}

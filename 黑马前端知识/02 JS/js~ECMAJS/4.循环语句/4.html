@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //循环的目的：重复执行某些代码
+        //循环体：一组被重复执行的语句，能否继续执行取决于终止条件----循环语句=循环体+终止条件;
+        //1.for循环语句（最常用）
+        /*步骤：1.i=1,i<=100,输出“纵小白”，i++；  
+                2.i=2,i<=100,输出“纵小白”，i++；
+                ......
+                当i大于100时，退出循环体
+          2.断点测试：F12 -> sources -> 选择所要执行的行数 -> 刷新一下浏览器 ->右边朝下的箭头
+        for (var i = 1; i <= 100; i++) {
+            console.log('纵小白');
+        }*/
+
+        /*
+        //今年多少岁
+        for (var age = 1; age <= 100; age++) {
+            console.log('你今年' + age + '岁');
+        }
+
+        
+        //求1-100和以及平均值
+        var sum = 0;
+        var ave = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+        ave = sum / 100;
+        console.log(ave);
+        
+
+        //求奇数和偶数和
+        var even = 0;
+        var odd = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even += i;
+            } else {
+                odd += i;
+            }
+        }
+        console.log(even);
+        console.log(odd);
+
+        //求3倍数的和
+        var en = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                en += i;
+            }
+        }
+        console.log(en);
+
+        //求学生成绩
+        var ave = 0;
+        var cj = 0;
+        var sum = 0;
+        var ss = prompt('请输入班级人数');
+        for (var i = 1; i <= ss; i++) {
+            cj = prompt('请输入第' + i + '学生成绩');
+            sum += parseFloat(cj);
+        }
+        ave = sum / parseInt(ss);
+        console.log(sum);
+        console.log(ave);
+        */
+
+        //2.双重for循环
+        /* //5*5星星
+         var str = '';
+         for (var i = 1; i <= 5; i++) {
+             for (var j = 1; j <= 5; j++) {
+                 str = str + '*';
+             }
+             str = str + '\n'
+         }
+         console.log(str);
+         
+        //倒三角*
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (j = i; j <= 10; j++) {
+                str = str + '*';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+        
+        //99乘法表
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = i; j <= 9; j++) {
+                //str = str + '*';
+                str += i + '*' + j + '=' + i * j + '\t';
+
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+        */
+        /*
+                //3.while循环语句（更复杂的时候使用）
+                var i = 0;
+                while (i < 5) {
+                    console.log('我是' + i);
+                    i++;
+                }
+
+                //4.do..while循环语气
+                var i = 0;
+                do {
+                    console.log('我是' + i);
+                    i++;
+                } while (i < 5);*/
+        /*
+                //1.1-100和
+                var i = 1;
+                var sum = 0;
+                while (i <= 100) {
+                    sum += i;
+                    i++;
+                }
+                console.log(sum);
+
+                //2.这个人几岁
+                var a = 0;
+                while (a < 100) {
+                    console.log('这个人今年' + a + '岁');
+                    a++;
+                }
+               
+               //3.一直弹出“你爱我吗？”
+                var a = prompt('你爱我吗？');
+                while (a !== '我爱你') {
+                    a = prompt('你爱我吗？');
+                }
+                alert('我也爱你啊'); */
+
+        //continue跳出当前循环，直接a++
+        var sum = 0;
+        for (a = 1; a <= 10; a++) {
+            if (a % 7 == 0) {
+                continue;
+            }
+            sum += a;
+            console.log(a);
+
+        }
+        //break:跳出整个循环
+        console.log('sum=' + sum);
+
+        var sum = 0;
+        for (a = 1; a <= 10; a++) {
+            if (a % 7 == 0) {
+                break;
+            }
+            sum += a;
+            console.log(a);
+        }
+        console.log('sum=' + sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search {
+            position: relative;
+            width: 200px;
+            background-color: blue;
+            margin: 100px auto;
+        }
+        
+        .con {
+            overflow: hidden;
+            height: 25px;
+            display: none;
+            position: absolute;
+            top: -50px;
+            width: 171px;
+            font-size: 18px;
+            border: 1px solid #666;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        
+        input {
+            width: 200px;
+            height: 30px;
+            outline: none;
+        }
+        
+        .con::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 25px;
+            left: 22px;
+            border: 10px solid #000000;
+            border-style: solid dashed dashed;
+            border-color: rgb(26, 23, 23) transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+    </div>
+
+    <script>
+        //1.按下s键，光标就订到搜索框
+        /* var search = document.querySelector('input')
+         document.addEventListener('keyup', function(e) {
+             if (e.keyCode == 83) {
+                 search.focus();
+             }
+         })*/
+        //2.模拟京东按键
+        var itn = document.querySelector('input');
+        var con = document.querySelector('.con')
+            //keypress,keydown在文本框的特点：两事件触发时，文字还没落入文本框
+            //keyup事件触发时文字已经落入文本框
+        itn.addEventListener('keyup', function() {
+            if (this.value == '') {
+                con.style.display = 'none';
+            } else {
+                con.style.display = 'block'
+                con.innerHTML = this.value;
+            }
+        })
+        itn.addEventListener('blur', function() {
+            con.style.display = 'none'
+        })
+        itn.addEventListener('focus', function() {
+            if (this.value !== '') {
+                con.style.display = 'block'
+            }
+        })
+    </script>
+</body>
+
+</html>

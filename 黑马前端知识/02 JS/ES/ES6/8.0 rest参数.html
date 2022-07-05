@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest参数</title>
+</head>
+
+<body>
+    <script>
+        //ES6引入rest参数，用于获取函数的实参，用来代替arguments
+        //es5获取实参的方法
+        // function data() {
+        //     console.log(arguments);
+        // }
+        // data('八只', '阿娇', '思慧');
+
+        // //rest参数
+        // function data(...args) {
+        //     console.log(args); //filter some every map
+        // }
+        // data('八只', '阿娇', '思慧');
+
+        //rest参数必须放到最后
+        function fn(a, b, ...args) {
+            console.log(a); //1
+            console.log(b); //2
+            console.log(args); //3,4,5,6
+        }
+        fn(1, 2, 3, 4, 5, 6);
+    </script>
+</body>
+
+</html>

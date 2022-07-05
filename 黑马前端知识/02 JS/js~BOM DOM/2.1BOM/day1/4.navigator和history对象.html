@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="list.html">点我前往列表页</a>
+    <button>前进</button>
+    <script>
+        //1.navigator对象：包含浏览器信息，有很多属性，我们通常用的属性是userAgent,该属性可以返回由客服机发送服务器的user-agent头部的值
+        //下面代码， 可以判断用户那个终端打开的页面实现跳转
+        if ((navigator.userAgent.match(/(phone|pad|pod|iphon|ipod|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|Fennec|wosbrowser|browserng|webos|sysbian|windows phone)/i))) {
+            window.location.href = "index.html"; //手机
+        } else {
+            window.location.href = ""; //电脑
+        }
+
+        //2.history对象：与浏览器历史进行交换，该对象包含（在浏览器窗口中）访问过的URL
+        //back():可以后退功能
+        //forward():前进功能
+        //go(参数)：前进后退功能，参数1：前进一个页面；参数-1：后退一个页面
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            //history.forward();
+            history.go(1);
+        })
+    </script>
+</body>
+
+</html>

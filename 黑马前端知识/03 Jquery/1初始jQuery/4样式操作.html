@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jQuery.min.js"></script>
+</head>
+<style>
+    .current {
+        color: blue;
+    }
+</style>
+
+<body>
+    <div>我放飞自我了</div>
+    <div class="one"></div>
+    <script>
+        //一。操作样式css方法
+        /*//1.参数只写属性名，则是返回属性值
+        $(this).css('color');
+        //2.参数是属性名，属性值，逗号隔开，是设置一组样式，属性必须加引号，但如果是数字可以不用单位和引号
+        $(this).css('color', 'red');
+        //3.参数可以是对象形式 ，方便设置多组样式，属性名和属性值用冒号隔开
+        $(this).css({
+            'color': 'red',
+            width: 200,
+            height: 200,
+            backgroundColor: 'red'
+                //若是复合函数，则必须采用驼峰命名法，若值不是数字。则需要加引号
+        });*/
+        //二。设置类样式方法
+        //1.添加类
+        $('div').addClass('current');
+        //2.删除类
+        $('div').removeClass('current');
+        //3.切换类
+        $(function() {
+                $('div').click(function() {
+                    $('div').toggleClass('current');
+                })
+            })
+            //类操作和className的区别
+            //原生js中的className会覆盖原来的类名，jQuery的类操作只是对指定类操作，不影响原先类名
+        $(function() {
+            $('.one').addClass('two');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fruits = ["Apple", "Apple", "Orange", "Banana"];
+        const qualityInBox = [1, 2, 4, 5];
+
+        let getFruitsTotalQuality = (fruits, qualityInBox) => {
+            let map = new Map();
+            for (let i = 0; i < fruits.length; i++) {
+                if (map.has(fruits[i])) {
+                    map.set(fruits[i], map.get(fruits[i]) + qualityInBox[i]);
+                } else map.set(fruits[i], qualityInBox[i])
+            }
+            for (let fruit of map.entries()) {
+                console.log(fruit)
+            }
+        }
+        getFruitsTotalQuality(fruits, qualityInBox);
+
+        module.exports = getFruitsTotalQuality;
+    </script>
+</body>
+
+</html>

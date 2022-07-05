@@ -1,0 +1,256 @@
+/*在这里编辑主页的样式*/
+.w{
+	width: 940px;
+	margin: 0 auto;
+}
+body{
+		width: 100%;
+		height: 472px;
+		background: url(../Polo/polo360.png) repeat-x;
+}
+	.header{
+		padding-top: 37px;
+		padding-bottom:46px ;
+		
+		}
+		.logo{
+			padding-left:17px ;
+		}
+	.clearfix:before,
+	.clearfix:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.z {
+			float: right;
+		margin-top:22px;
+		}
+		
+	.z li{
+			border-left: 1px dashed #d6d6d6;
+			float: left;
+			padding: 0 9px 8px;
+			
+		}
+		
+ .z a
+{
+	color: #666;
+	font:bold 14px Georgia ;
+	text-decoration: none;}	
+.z a:hover{
+		color: red;
+text-decoration: underline;
+}
+.z p{
+	color:#b7b7b7;
+	font:  11px Tahoma ;
+}
+/*header结束*/
+/*banner开始*/
+.banner{
+	position: relative;
+	height: 353px;
+	background: url(../banner/ban2.png)  bottom;
+	margin-bottom: 22px;
+}
+.ban{
+	position: absolute;
+	left:15px;
+	top:314px
+}
+.ban a{
+	float: left;
+	width: 17px;
+	height: 17px;
+	margin-left: 4px;
+	background: url(../Polo/bad2.png) no-repeat ;
+	}
+.ban .active ,.ban a:active{
+	background: url(../Polo/bad1.png) no-repeat ;
+}
+/*banner结束*/
+
+/*concent开始*/
+.bt{
+	margin-bottom: 38px;
+	font:bold 24px georgia;
+	color: #000;
+	text-align: center;
+	padding-bottom:21px ;
+	background: url(../banner/bt1.png)no-repeat bottom;
+}
+ .bzl h2
+{
+	font:bold 21px georgia;
+	color: #11719e;
+}
+.bzl p{
+	font: 12px helvetica;
+	color: #9e9e9e;
+}
+.le , .ce ,.ri,.p1{
+	width: 300px;
+	float: left;
+}
+.ce{
+	margin:0 16px ;
+}
+.ri{
+}
+
+.centent.p1{
+	height: 92px;
+	font: 13px helvetica;
+	color: #3e3e3e;
+}
+.im {
+	width: 299px;
+	height: 190px;
+	margin-top: 16px;
+	margin-bottom: 10px;
+		background: url(../cent/cc1.png)no-repeat ; 
+		text-align: center;
+		padding-top: 12px;
+}
+
+/*按钮*/
+.a1{
+	display:inline-block;
+	width: 163px;
+	height: 40px;
+	background: url(../cent/d11.png) no-repeat ;
+	text-decoration: none;
+	font: 12px/40px helvetica;
+	color: #016999;
+	margin-top:20px;
+	text-indent:1em ;
+}
+.a1:hover{
+	color: chartreuse;
+}
+.centent{
+	padding-bottom: 34px;
+	background: url(../banner/bt1.png) no-repeat bottom;
+	margin-bottom: 44px;
+}
+
+/*联系栏开始*/
+.lxl{
+	/*background-color: chartreuse;*/
+}
+.lxl h2{
+	height: 15px;	
+	padding-bottom:10px ;	
+	border-bottom: 1px dashed #d3d3d3;
+	font: bold 18px georgia;
+	color:#444;
+	margin-bottom: 17px;
+}
+.l1,.l2,.l3{
+	width: 300px;
+	float: left;	
+}
+.lxl .l2{
+	margin: 0 16px;	
+}
+.lxl .l1{
+	margin-bottom: 16px;
+}
+.te1{
+	display: block;
+	width: 296px;
+	height: 33px;
+	background: url(../3.3/guang1.png) no-repeat;
+	/*border:none;*/
+	overflow: auto;
+	font: 10px verdana;
+	color: #d4d4d4;
+	margin-bottom: 16px;
+	background-attachment: fixed;
+}
+.te2{
+	display: block;
+	width: 296px;
+	height: 134px;
+	background: url(../3.3/guang2.png) no-repeat;
+	/*border:none;*/
+	overflow: auto;
+	resize: none;
+	font: 10px verdana;
+	color: #d4d4d4;
+	margin-bottom: 14px;
+	background-attachment: fixed;
+}
+.bu{
+	width: 163px;
+	height: 32px;
+	background: url(../3.3/an1.png) no-repeat;
+	margin-top: 8px;
+	border: none;
+	font: 13px/32px georgia;
+	color: white;
+	text-align: left;
+	text-indent: 1em;
+}
+.lxl .p3{
+	font: 12px/15px helvetica;
+	color: #acacac;
+	margin-bottom: 9px;
+}
+
+.lxl .tt{
+	font-size: 0;
+	margin-bottom: 21px;;
+}
+
+.lxl h3{
+	font: bold 18px/1 "gill sans mt";
+	color: #686868;
+	border-bottom: 1px dashed #d3d3d3;
+	padding-bottom:10px ;
+}
+.p4{
+	font:12px/15px helvetica;
+	color: #acacac;
+	margin: 12px 0 12px 0 ;
+}
+.lxl .ja .ta{
+	height: 58px;
+	border-bottom: 1px dashed #777;
+	margin:14px 10px 0 0 ;
+	padding-bottom: 10px;
+	font :12px/1 helvetica;
+	color: #777;
+	margin-bottom:18px;
+}
+.lxl img{
+	float:left;
+	margin-right: 8px;
+}
+	
+.foot{
+	width: 100%;
+	height: 183px;
+	background-color: #333;
+	border-top:10px solid #4c4c4c ;
+}
+.foot .uu,.foot a{
+
+	font: 11px helvetica;
+	color: #8e8e8e;
+	margin-top: 20px;
+	
+}
+.foot .ll{
+	float:right;
+	margin-right: 23px;	
+}
+.foot li{
+	line-height: 15px;
+}
+
+.foot li a:hover{
+	color: aquamarine;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+
+<body>
+    <script>
+        //声明一个set
+        let m = new Map();
+
+        //自动去重
+        let s2 = new Set([1, 2, 3, 4, 1]);
+        console.log(s2);
+
+        //元素个数
+        console.log(m.size);
+
+        //添加新元素
+        m.set('name', '尚硅谷');
+        m.set('change', function() {
+            console.log('我们可以改版你');
+        });
+        // let key:{school:string}
+        let key = {
+            school: 'ATGHFGN'
+        };
+        m.set(key, ['背景', '上海']);
+        console.log(m);
+
+        //删除元素
+        console.log(m.delete('name')); //true
+        console.log(m);
+
+        //获取
+        console.log(m.get('change'));
+        console.log(m.get(key));
+        console.log('-----------------------');
+
+        //清空
+        // console.log(m.clear());
+
+        //遍历
+        for (let v of m) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

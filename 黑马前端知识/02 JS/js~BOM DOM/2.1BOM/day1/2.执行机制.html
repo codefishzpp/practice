@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.js是单线程：同一时间只能做一件事情
+        //2.解决单线程问题，利用多核cpu的计算能力：同步异步
+        //异步一般以下三种：
+        //1.普通事件：click,resize等
+        //2.资源加载：如load,error等
+        //3.定时器：如setInterval,setTimeout等
+        //第一问题（异步）
+        console.log(1); //第一个出结果
+        setTimeout(function() {
+            console.log(3); //第三个出结果，等1s再出来
+        }, 1000)
+        console.log(2); //第二个出结果
+        /*分析：先执行同步任务（执行栈），再执行异步任务
+            同步任务：主线程执行栈
+                console.log(1);
+                setTimeout(fn,0)
+                console.log(2);
+            异步任务：任务队列（消息队列）
+                function(){console.log(3)}
+        */
+        //第二个问题
+        console.log(1); //第一个出结果
+        setTimeout(function() {
+            console.log(3); //第三个出结果，不用等出结果
+        }, 0)
+        console.log(2); //第二个出结果
+
+        //事件循环：由于主线程不断的重复获取任务，执行任务，再获取任务，再执行
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../2day2/js/jquery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        border: 10px solid red;
+        background-color: royalblue;
+        padding: 10px;
+        margin: 10px;
+    }
+    
+    .father {
+        position: relative;
+    }
+    
+    .son {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+    }
+</style>
+
+<body>
+    <div></div>
+    <p class="father">
+        <p class="son"></p>
+    </p>
+    <script>
+        //获取匹配元素宽度和高度值
+        //width(),height():只有width，height 
+        //innerWidth(),innerHeight()：包含padding
+        //outerWidth(),outerHeight()，包含padding，border
+        //outerWidth(true),outerHeight(true)，包含padding，border，margin
+        console.log($('div').width()); //200
+        console.log($('div').innerWidth()); //200+10*2
+        console.log($('div').outerWidth()); //200+20+20
+        console.log($('div').outerWidth(true)); //200+20+20+20
+        $(function() {
+            //获取设置距离文档的位置（偏移）offset
+            console.log($('.son').offset()); //top:36,left:20
+            console.log($('.son').offset().top); //36
+            $('.son').offset({
+                top: 200,
+                left: 200
+            })
+            console.log($('.son').offset()); //top:36,left:20
+            //2.获取距离带有父级位置（偏移）position 如果没有带有定位的父亲，则以文档为准
+            //这个方法只能查看，不能设置位移
+            console.log($('.son').position());
+            /*$('.son').position({
+                            top: 100,
+                            left: 100
+                        })
+                        console.log($('.son').position());*/ //无用，无法设置值
+        })
+    </script>
+</body>
+
+</html>

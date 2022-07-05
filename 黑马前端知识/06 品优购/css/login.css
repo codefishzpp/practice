@@ -1,0 +1,116 @@
+    /*输入信息栏*/
+    
+    .m_right {
+        margin: 20px auto;
+        width: 650px;
+        height: 400px;
+        background-color: rgb(158, 252, 242);
+    }
+    
+    .m_right h2 {
+        font-size: 25px;
+        margin-left: 220px;
+        margin-bottom: 20px;
+    }
+    
+    .uName_pwd {
+        margin: 0 auto;
+    }
+    
+    .uName_pwd .txt {
+        width: 280px;
+        height: 38px;
+        border: 1px solid #D8D8D8;
+        background: url(../img/sprite.png) no-repeat 0 -487px;
+        padding-left: 50px;
+    }
+    
+    .uName_pwd .btn {
+        width: 280px;
+        height: 38px;
+        border: 1px solid #D8D8D8;
+        background: url(../img/sprite.png) no-repeat 0 -546px;
+        padding-left: 50px;
+    }
+    
+    .uName_pwd div {
+        width: 100%;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    
+    .uName_pwd .s {
+        display: block;
+        text-align: center;
+        float: left;
+        width: 60px;
+        margin: 0 10px;
+    }
+    /*自动登录栏*/
+    
+    .remember {
+        height: 40px;
+        font-size: 17px;
+    }
+    
+    .remember .fl {
+        margin-left: 80px;
+    }
+    
+    .remember .fl input {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+    
+    .remember .fr {
+        margin-left: 155px;
+    }
+    
+    .loginBtn {
+        width: 200px;
+        height: 34px;
+        background-color: #c81623;
+        margin: 30px 0 0 130px;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+    }
+    
+    .login_type li {
+        font-size: 17px;
+        float: left;
+        margin: 10px;
+        text-align: center;
+        background: url(../img/sprite.png) no-repeat 0 0;
+        padding-left: 30px;
+    }
+    
+    .login_type {
+        display: block;
+        width: 400px;
+        height: 40px;
+        margin-left: 70px;
+    }
+    
+    .other {
+        font-size: 17px;
+        margin-left: 20px;
+    }
+    
+    .last {
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+    
+    .last .li {
+        width: 400px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .last .li input {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+    }

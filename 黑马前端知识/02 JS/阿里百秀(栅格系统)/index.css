@@ -1,0 +1,164 @@
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .nav li {
+    float: left;
+    width: 20%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .anv li a {
+    font-size: 12px !important;
+    padding-left: 0 !important;
+  }
+  .news li:nth-child(1) {
+    width: 100% !important  ;
+  }
+  .news li {
+    width: 50% !important;
+  }
+  .publish h3 {
+    font-size: 16px;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container .header {
+  padding-left: 0 !important;
+}
+.container .header .logo {
+  background-color: #00AEFF;
+  height: 124px;
+}
+.container .header .logo a {
+  display: block;
+  height: 124px;
+  background: url(img/logo.png) no-repeat;
+  background-position: 50% 50%;
+}
+.container .header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container .header .nav ul a {
+  display: block;
+  height: 55px;
+  background: rgba(214, 210, 210, 0.644);
+  font-size: 18px ;
+  color: #00AEFF;
+  text-decoration: none;
+  padding-left: 25px;
+  line-height: 55px;
+}
+.container .header .nav ul a:hover {
+  text-decoration: none;
+  background: white;
+}
+.container .article .news {
+  margin-bottom: 15px;
+}
+.container .article .news ul li {
+  float: left;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+.container .article .news ul li:nth-child(1) {
+  height: 266px;
+  width: 50%;
+}
+.container .article .news ul li:nth-child(1) a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.container .article .news ul li:nth-child(1) a img {
+  width: 100%;
+  height: 100%;
+}
+.container .article .news ul li:nth-child(1) a p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 18px;
+  height: 40px;
+  margin: 0;
+  color: white;
+  line-height: 40px;
+  padding-left: 10px;
+}
+.container .article .news ul li:nth-child(n+2) {
+  width: 25%;
+  height: 128px;
+}
+.container .article .news ul li:nth-child(n+2) a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.container .article .news ul li:nth-child(n+2) a img {
+  width: 100%;
+  height: 100%;
+}
+.container .article .news ul li:nth-child(n+2) a p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 5px;
+  height: 40px;
+  margin: 0;
+  color: white;
+  padding: 4px 10px 0 10px;
+}
+.container .article .publish {
+  border-top: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+.container .article .publish .row {
+  margin: 0 !important;
+  border-bottom: 1px solid #ccc;
+}
+.container .article .publish a {
+  display: block;
+  width: 100%;
+  height: 156px;
+  line-height: 156px;
+}
+.container .article .publish a img {
+  width: 100%;
+}
+.container .aside a {
+  display: block;
+  text-decoration: none ;
+}
+.container .aside .banner {
+  height: 180px;
+  margin-top: 20px;
+}
+.container .aside .banner img {
+  width: 100%;
+}
+.container .aside .hot {
+  display: block;
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+.container .aside .hot sapn {
+  margin-left: 10px;
+}
+.container .aside .hot p {
+  font-size: 10px;
+}

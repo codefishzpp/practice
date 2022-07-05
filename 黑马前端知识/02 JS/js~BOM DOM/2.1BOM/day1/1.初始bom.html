@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击我</button>
+    <button class="btn1">点击停止定时器</button>
+    <div></div>
+    <script>
+        //bom浏览器对象模型，提供了独立内容而与浏览器窗口进行交互的对象，核心是window
+        //bom缺乏标准，Js语法化的标准化组织是ECMA，Dom是W3C，Bom最初是、netscape浏览器最标准的一个部分
+        //Dom：文档对象模型、把文档当对象来看、顶级对象是Document、主要学习操作页面、W3C标准规范
+        //Bom:浏览器对象模型、把浏览器当对象来看、顶级对象是window、学习的是浏览器窗口交互的一些对象、浏览器窗口厂商在各自浏览器上定义的，兼容性较差
+        //BOM比DOM大，包含DOM。window->document->location->navigation->screen->history
+        //windows对象是浏览器的顶级对象，具有双重角色：1）是JS访问浏览器窗口的一个接口；2）是全局变量。定义在全局作用域的变量，函数都会变为window对象的属性和方法
+        //在调用的时候可以省略window，前面对话框都属于window对象方法，如alert（）、prompt（）．
+        //注意：window下的一个特殊属性window.name
+
+        //窗口(页面）加载事件：文档内容加载完成之后会触发该事件（包括图文，脚本文件，css文件等），就调用处理函数
+        /* window.onload=function(){}
+        window.addEventListener('load',function(){})
+        //注意：有了window.onload就可以把Js代码写到页面元素上方，onload是等页面内容全部加载完毕之后再去触发函数
+        //window.onload传统注册事件方式只能写一次，如果有多个，以最后一个为准
+        //window.addEventListener('load',function(){})没有限制
+
+        document.addEventListener('DOMContentLoaded',function(){})
+        //DOMContentLoaded事件触发时，仅当DOM加载完成，不包含样式表，图片，flash等等，IE9以上支持
+        //若页面图片很多，从用户访问到onload触发可能需要较长的时间，交互效果就不能实现，必然影响用户体验，此时用DOMContentLoaded事件就比较适合
+
+        window.addEventListener('load', function() {
+                var btn = document.querySelector('button');
+                btn.addEventListener('click', function() {
+                    alert('点击我')
+                })
+            }) //第三个出现
+
+        window.addEventListener('load', function() {
+                alert(22)
+            }) //第二个出现
+
+        document.addEventListener('DOMContentLoaded', function() {
+                alert('33')
+            }) //第一个出现
+            //load等页面内容全部加载完毕，包含页面dom元素，图片flash css 等等
+            //DOMContentLoaded是DON加载完毕，不包含图片flash caa 等就可以执行，加载速度比load更快一些
+            
+
+        //调整窗口大小事件
+        //只要窗口大小发生像素变化，就会触发事件
+        //经常用这个事件完成响应式布局，window.innerWidth当前的宽度
+        window.onresize = function() {}
+        window.addEventListener('resize', function() {})
+        
+        window.addEventListener('load', function() {
+            var div = document.querySelector('div');
+            window.addEventListener('resize', function() {
+                console.log(window.innerWidth)
+                console.log('变化了');
+                if (window.innerWidth <= 800) {
+                    div.style.display = 'none';
+                } else {
+                    div.style.display = 'block';
+                }
+            })
+        })
+
+        //setTimeout()定时器：用于设置一个定时器，该定时器在定时器到期后执行调用函数
+        //window可以省略
+        //调用函数可以直接函数、函数名或者采取字符串‘函数名（）’三种形式，第三种不推荐
+        //延迟的毫秒数省略默认为0，若写必须是毫秒
+        //定时器很多，所以我们经常给定时器赋值一个标识符
+        //window.setTimeout(调用函数，[延迟的毫秒数]);
+        //1.
+        setTimeout(function() {
+                //console.log('爆炸了');
+            }, 3000)
+            
+            //2.
+        function callback() {
+            console.log('爆炸了');
+        }
+        var time1 = setTimeout(callback, 3000);
+        var time2 = setTimeout(callback, 5000);
+        
+        //3.不提倡这个写法
+        setTimeout('callback()', 2000)
+            //setTimeout()定时器，也称回调函数callback。普通函数按照代码顺序直接调用，而函数需要等待时间采取调用函数，element.onclick=function(){},element.addEventListener('click',fn);也是回调函数
+
+        //clearTimeout(timeoutID)停止定时器,timeoutID:定时器标识符
+        var btn = document.querySelector('.btn1');
+        var stop = setTimeout(function() {
+            console.log('爆炸了啊');
+        }, 5000)
+        btn.addEventListener('click', function() {
+            clearTimeout(stop)
+        })*/
+
+        //setInterval（）定时器，重复调用一个函数，每间隔这个
+        //window.setInterval(回调函数，[间隔的毫秒数])
+        var btn = document.querySelector('.btn1');
+        var w = setInterval(function() {
+            console.log('我很快乐啊！一直输出');
+        }, 2000)
+        btn.addEventListener('click', function() {
+                clearTimeout(w);
+            })
+            //setTimeout():只调用一次函数；setInteerval()重复调用多次
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //对象：由方法和属性构成
+        //属性：事物的特征--手机的大小、颜色、厚度等
+        // 方法：事物的行为--打电话、玩游戏等---对象里面的函数，方法不需要声明，对象.方法名进行调用
+
+        //1、创建对象的三种方式
+        //（1）字面量 创建对象---{}
+        //var obj={};//创建的空对象
+        var obj = {
+            uname: '张三丰',
+            age: '18',
+            sex: '男',
+            sayHi: function() {
+                console.log('hi~');
+            }
+        }
+        console.log(obj);
+        console.log(obj.uname);
+        console.log(obj['age']);
+        obj.sayHi();
+
+
+        /*（2）new Object创建对象
+        1)利用 等号=赋值的方式 添加对象的属性和方法
+        2）每个属性和方法之间用 分号结束*/
+        var obj = new Object(); //创建空对象
+        obj.uname = '张山峰';
+        obj.age = 18;
+        obj.sex = '男';
+        obj.sayHi = function() {
+            console.log('hi');
+        }
+        console.log(obj.uname);
+        console.log(obj['sex']);
+        obj.sayHi();
+        /*
+         （3）构造函数 创建对象
+             1）里面的属性或者方法->采用键值对形式， 键 属性名：值 属性值
+             2）多个属性或者方法用逗号隔开
+             3）方法冒号跟的是匿名函数
+         2.使用方法
+         （1）调用对象属性   对象名.属性名
+         console.log(obj.uname);
+         (2)调用对象属性方法2 对象名['属性名']
+         console.log(obj['age']);
+         (3)调用对象的方法 sayHi  对象名.方法名（）千万别忘添加小括号
+         obj.sayHi();
+          */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*		
+			 	 * 伪类与伪元素选择器*
+			 *1. 结构性伪类
+				index的值从1开始计数！！！！
+				index可以为变量n(只能是n)
+				index可以为even odd
+					#wrap ele:nth-child(index)		表示匹配#wrap中第index的子元素 这个子元素必须是ele
+					#wrap ele:nth-of-type(index)	表示匹配#wrap中第index的ele子元素
+					除此之外:nth-child和:nth-of-type有一个很重要的区别！！
+							nth-of-type以元素为中心！！！
+							
+			1）	:nth-child(index)系列			
+					:first-child
+					:last-child
+					:nth-last-child(index)
+					:only-child	(相对于:first-child:last-child 或者 :nth-child(1):nth-last-child(1))
+				:nth-of-type(index)系列     以元素为中心
+					:first-of-type
+					:last-of-type
+					:nth-last-type(index)
+					:only-of-type	(相对于:first-of-type:last-of-type 或者 :nth-of-type(1):nth-last-of-type(1))
+				*/	
+				
+				
+				
+				/*
+			2）	 * :first-child
+				 *  未指出父元素，所以元素同级；
+				 * #wrap > div:first-child
+				 *  指出父元素，可指定父元素内第一子元素性质
+				 * :first-of-type 以元素为中心
+				 * 
+				 * :last-child
+				 *  未指出父元素，所以元素同级；
+				 * #wrap > div:last-child
+				 	指出父元素，可指定父元素内最后一个子元素性质
+				 	:last-of-type  以元素为中心
+				 */
+				
+				/*  
+			3）	 *  ele:only-child
+						会选择只有一个ele元素的标签定义
+				   ele:only-of-type
+				               会选择   只有和包含  一个 ele元素的标签定义
+				 * */
+				/*
+			4)
+				:not()	
+					排除不想给的元素	
+				:empty()
+					(内容必须是空的，有空格都不行，有attr没关系)
+				*/
+				
+				p:nth-child(1){
+					background-color: red;
+				}
+				p:nth-of-type(1){
+					background-color: blue;
+				}
+				
+				
+				div > div: first-child{
+					color: yellow;
+				}
+				
+				 /*div > div:first-of-type{
+					background-color: pink;
+				}*/
+				 div > div:last-child{
+					color: green;
+				}
+				
+				ul>li:nth-last-child(1){
+					background-color: blue;
+				}
+				
+				
+				/*article:only-child{
+					background-color: #000000;
+				}*/
+				article:only-of-type{
+					background-color: #f00;
+				}
+				
+				
+				div {
+						height: 200px;
+						background: #abcdef;
+					}
+				div:empty{
+					background-color: brown;
+				}
+				
+				body>span:not(span:first-child){
+					background-color: red;
+				}
+				
+				
+				</style>
+				
+	</head>
+	<body>
+		
+		<span>2222222222222222</span><br />
+		<p>111111111</p><br />
+		<span>2222222222222222</span><br />
+		<span>2222222222222222</span><br />
+		<span>2222222222222222</span><br />
+		<span>2222222222222222</span><br />
+		
+		<div>
+			<p>111111111</p><br />
+		<div>wrap同级</div>
+		<div>wrap同级</div>
+		<div>wrap同级</div>
+		<div>wrap同级</div>
+		<div>wrap同级</div></div>
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+				
+		<section>
+			<article>1</article>
+			<article>2</article>
+		</section>
+		<section>
+			<article>3</article>
+		</section>
+		<section>
+			<div>4</div>
+			<article>5</article>
+			<div>6</div>
+		</section>
+		<section>
+			<div>7</div>
+			<article>8</article>
+			<article>9</article>
+			<div>10</div>
+		</section>
+		
+		
+		<div></div>
+		<div>Second</div>
+		<div ></div>
+		<div>Third</div>
+		
+	</body>
+</html>

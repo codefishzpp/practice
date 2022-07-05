@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>点击</button>
+    <div></div>
+
+    <!--2.
+    <form action="index.html">
+        用户名：<input type="text" name='uname'>
+        <input type="submit" value="登录">
+    </form>
+-->
+    <script>
+        //URL:统一资源定位符（uniform resource location，URL）
+        //语法：protocol://host[:port]/path/[?query]#fragment
+        //http://www.itcast.cn/index.html?name=andy&age=18#link
+        //协议：//域名/路径/参数/片段
+
+        //location对象属性
+        /*
+        location.href：获取或者设置整个URL
+        location.host：返回主机域名 (www.itcast.cn)
+        location.prot:返回端口号
+        location.pathnaem:返回路径
+        location.search:返回参数
+        locaiton.hash:返回片段 #后面内容，常见于链接 锚点
+        重点：href,search
+       
+        //demo1:5s后自动跳转页面
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div')
+        btn.addEventListener('click', function() {
+                location.href = 'https:www.baidu.com'; //直接点击跳转
+            })
+            //5秒后跳转
+        var time = 5;
+        setInterval(function() {
+            if (time == 0) {
+                location.href = 'https:www.baidu.com';
+            } else {
+                div.innerHTML = '您将在' + time + '秒后跳转页面';
+                console.log(time);
+                time--;
+            }
+        }, 1000)
+ */
+        //demo2：获取URL参数数据
+        //在不同页面中的传递index.html
+
+        //location对象的方法
+        /*
+        location.assign():跟href一样，可以跳转页面（也称为重定向页面）
+        location.replace():替换当前页面，因为不记历史，所以不能后退
+        location.reload():重新加载页面，相当于刷新按钮或者f5,若参数为true,强制刷新ctrl+f5
+        */
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            //1.记录历史，可后退
+            //location.assign('https:www.baidu.com');
+            //2.不记历史，不可后退
+            //location.replace('https:www.baidu.com')
+            //3.刷新页面
+            location.reload(true);
+        })
+    </script>
+</body>
+
+</html>

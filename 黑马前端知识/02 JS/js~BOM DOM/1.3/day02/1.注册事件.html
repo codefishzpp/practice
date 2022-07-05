@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        //1.注册事件或绑定事件：给元素添加事件
+        //注册事件两个方式：
+        /*1)、传统方式;
+            利用on开头onclick
+            特点：注册事件唯一性
+            同一个元素同一个事件只能设置一个处理函数，最后注册的函数将会覆盖前面注册的函数
+         2)、方法监听注册方式
+            w3c标准 推荐方式
+            addEvenListener()他是一个方法
+            ie9之前的不支持此法，可用attachEvent()代替
+            特点：同一个元素同一个事件可以多个监听器
+            按注册顺序依次执行
+        
+        //1.传统注册事件
+        var btns=document.querySelectorAll('button');
+        btns[0].onclick=function(){
+            alert('hi');
+        }
+        btns[0].onclick=function(){
+            alert('byb');
+        }
+        //2.方法监听注册事件--eventTarget.addEvenListener(type,linstener[,useCapture])
+        //  type:事件类型字符串，比如click,mouseover,注意：这里不带on
+        //  listener:事件处理函数，事件发生时，会调用该监听函数
+        //  useCature:可选参数，是一个布尔值，默认false,学完dom，再细学
+        btns[1].addEventListener('click',function(){
+            alert('222');
+        })
+        btns[1].addEventListener('click',function(){
+            alert('33');
+           
+        })
+         //3.attachEvent ie9前支持
+         //EventTarget.attachEvent(eventNameWidth,callback)
+        //eventTarget:目标对象
+        //eventNameWidth:事件类型字符串，比如onclick,onmouseover,这里带on
+        //callback：事件处理函数，当目标触发事件时回调函数被调用
+         btns[1].addachEvent('click',function(){
+            alert('44');
+        })
+         */
+
+        //删除事件
+        var divs=document.querySelectorAll('div')
+        divs[0].onclick=function(){
+            alert(11);
+            //1)传统方式删除事件
+           divs[0].onclick=null;
+        }
+        //2)removerEventListener删除事件
+        divs[1].addEventListener('click',fn)//里面fn，不用调用加小括号
+        function fn(){
+            alert(22);
+            divs[1].removeEventListener('click',fn);
+        }
+        //3)
+        divs[2].attachEvent('onclick',fn1)
+        function fn1(){
+            alert(33);
+            divs[2].detachEvent('onclick',fn1);
+        }
+        
+
+
+    </script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(img/1.gif) no-repeat;
+            background-size: 100%;
+        }
+        
+        div {
+            width: 1300px;
+            height: 250px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="img/1.gif" alt="" title="第一张图">
+        <img src="img/2.gif" alt="" title="第二张图">
+        <img src="img/3.gif" alt="" title="第三张图">
+        <img src="img/4.gif" alt="" title="第四张图">
+    </div>
+    <script>
+        var imgs = document.querySelector('div').querySelectorAll('img');
+        var body = document.querySelector('body');
+        // console.log(imgs);
+        //var body = document.querySelectorAll('body');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                body.style.backgroundImage = 'url(' + this.src + ')';
+                body.style.backgroundSize = '100 % ';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+            "path" : "pages/flex/align-self/align-self",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+			},
+			{
+            "path" : "pages/flex/flex-items/flex-items",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "uni-app",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+,
+        {
+            "path" : "pages/flex/justify-content/justify-content",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }, {
+            "path" : "pages/flex/flex-direction/flex-direction",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+            "path" : "pages/ifcomplie/ifcomplie",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "uni-app",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+			"path": "pages/index/event",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},{
+            "path" : "pages/hello/hello",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "私有标题",
+                "enablePullDownRefresh": false
+			 
+            }
+            
+        }
+        
+        ,{
+           "path" : "pages/vif/vfor",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "vif",
+                "enablePullDownRefresh": false
+            }
+            
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

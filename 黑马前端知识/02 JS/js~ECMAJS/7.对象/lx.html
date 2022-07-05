@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.字面量创建对象
+        var obj = {
+            uname: '可可',
+            type: '阿拉斯加犬',
+            age: 5,
+            color: '棕红色',
+            saySkill: function() {
+                console.log('汪汪汪');
+                console.log('演电影');
+            }
+        }
+        console.log(obj);
+        obj.saySkill();
+
+        //2.new创建对象
+        var obj = new Object();
+        obj.name = '鸣人';
+        obj.sex = '男';
+        obj.age = 19;
+        obj.sayHi = function() {
+            console.log('影分身术   ');
+        }
+        console.log(obj);
+        obj.sayHi();
+
+        //3.构造函数创建对象
+        function Hero(uname, type, blood) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function(atta) {
+                console.log(atta);
+            }
+
+        }
+        var lp = new Hero('廉颇', '力量型', '500血量')
+        console.log(lp);
+        lp.attack('近战');
+        var hy = new Hero('后裔', '力量型', '100血量')
+        console.log(hy);
+        hy.attack('远程');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            margin: 50px auto;
+            width: 1000px;
+            height: 60px;
+            background: #999;
+        }
+        
+        .box p {
+            margin: 0;
+            float: left;
+            width: 100px;
+            text-align: center;
+            line-height: 60px;
+            height: 60px;
+        }
+        
+        .box input {
+            border-radius: 10px;
+            padding: 0;
+            width: 400px;
+            height: 95%;
+            background-color: white;
+            border-color: rgb(206, 204, 204);
+            outline: rgb(206, 204, 204);
+            color: rgb(206, 204, 204);
+            font-size: 15px;
+        }
+        
+        .box i {
+            position: absolute;
+            top: 21px;
+            right: 457px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            background-color: rgb(61, 61, 238);
+            font-size: 10px;
+        }
+        
+        span {
+            position: absolute;
+            top: 20px;
+            right: 80px;
+            font-size: 15px;
+            color: rgb(240, 239, 239);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>设置密码:</p>
+        <input type="text" value="请输入密码">
+        <i>i</i>
+        <span>请输入6-16位字符（字母、数字、符号），区分大小写</span>
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var i = document.querySelector('i');
+        var span = document.querySelector('span');
+        input.onfocus = function() {
+            if (input.value === '请输入密码') {
+                input.value = '';
+                i.innerText = 'i';
+                i.style.backgroundColor = 'rgb(61, 61, 238)';
+                span.style.right = '80px'
+                span.innerText = '请输入6-16位字符（字母、数字、符号），区分大小写';
+            }
+            this.style.color = 'blue';
+
+        }
+
+
+        input.onblur = function() {
+            if (input.value === '') {
+                input.value = '请输入密码';
+            }
+            this.style.color = ' rgb(206, 204, 204)';
+            if (this.value.length < 6 || this.value.length > 16) {
+                i.innerText = '×';
+                i.style.backgroundColor = 'red';
+                span.innerText = '输入错误！请重新输入6-16位字符';
+                span.style.right = '210px'
+            } else {
+                i.innerText = '√';
+                i.style.backgroundColor = 'rgb(61, 61, 238)';
+                span.style.right = '383px'
+                span.innerText = '输入正确'
+
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>

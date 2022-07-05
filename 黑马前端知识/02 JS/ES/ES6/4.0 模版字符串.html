@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模版字符串</title>
+</head>
+
+<body>
+    <script>
+        //es6引入新的声明字符串的方式[``] '' ""
+        //1.声明
+        let str = `我是一个字符串`;
+        console.log(str, typeof str); //我是一个字符串 string
+
+        //2.内容可以直接出现换行符
+        let str2 = `<ul>
+                    <li>申城</li>
+                    <li>玛丽</li>
+                    <li>杨洋</li>
+                    <li>艾伦</li>
+                     </ul> `;
+        console.log(str2);
+
+        //3.变量拼接
+        let love = 'love';
+        // let you='you'
+        let som = `i ${love} you`;
+        console.log(som); //i love you
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/flex/flew-wrap/flew-wrap",
+    "pages/flex/flex-direction/flex-direction",
+    "pages/ifcomplie/ifcomplie",
+    "pages/index/event",
+    "pages/hello/hello",
+    "pages/vif/vfor",
+    "pages/flex/flex"
+  ],
+  "subPackages": [],
+  "window": {
+    "defaultTitle": "uni-app",
+    "titleBarColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}

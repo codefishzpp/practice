@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="1.js"></script>-->
+    <script>
+        //所有都要用单引号
+        /* var myname;
+               myname = '纵小白';
+               console.log(myname);
+               var a = '纵雪碧';
+               console.log(a);
+               var b = 3,
+                   c = 5,
+                   d = 6;
+               console.log(b + c + c);
+               aa = 99;
+               console.log(aa);
+        */
+
+        /* 
+                //两数交换
+                var temp;
+                 var a = 3,
+                     b = 5;
+                 console.log(typeof a);
+                 var aa = prompt('请输入数字')
+                 console.log(typeof aa); 
+                 temp = a;
+                 a = b;
+                 b = temp;
+                 console.log(a);
+                 console.log(b);
+
+                //特殊数
+                var num1 = 07;//8进制
+                var num2 = 0X8;//16进制
+                console.log(num1);
+                console.log(num2);
+                alert(Number.MAX_VALUE);//最大值
+                alert(Number.MIN_VALUE)//最小值
+                alert(Infinity);//无穷大，
+                alert(-Infinity);//无穷小
+                alert(NaN);//非值
+         */
+
+        /* 
+        //1.isNaN是否为非数，true falsa
+        var aa = 21;
+         console.log(isNaN(aa));
+         var aa = 'aaa';
+         console.log(isNaN(aa));
+         //2.外双内单，外单内双，其他都出错
+         var a = '我是"程\t序员"';
+         console.log(a);
+         var a = "我是'程\b序员'";
+         console.log('你到底在' + a + '说什么');
+        */
+
+        /*
+                //typeof获取数据类型,  boolean的字面量是true
+                var num = 5;
+                console.log(typeof(num)); //number
+                var str = 'sg';
+                console.log(typeof(str)); //string
+                var num = false;
+                console.log(typeof(num)); //boolean
+                var num = undefined;
+                console.log(typeof(num)); //underfined
+                var num = null;
+                console.log(typeof(num)); //object
+                var num = prompt('请输入数字'); //string
+                console.log(typeof(num));
+        */
+
+        /*
+        //转换成string型
+        var a = 22;
+        console.log(a);
+        console.log(typeof(a));
+
+        //1.toString转换字符型---蓝色number型，黑色string型
+        var b = toString(a);
+        console.log(b);
+        console.log(typeof(b));
+
+        //2.String转换字符型
+        console.log(String(a));
+        console.log(typeof(a))
+
+        //3.利用+实现字符型转换
+        console.log(a + '');
+*/
+
+        /*
+                        //1.使用parseInt,parseFloat  字符型转换为数值型
+                        console.log('3.14');
+                        console.log(parseInt('3.14'));
+                        console.log(parseFloat('3.14'));
+
+                        console.log('3.14px');
+                        console.log(parseInt('3.14px')); //无px
+                        console.log(parseFloat('3.14px')); //无px
+
+                        console.log('rem3.14px');
+                        console.log(parseInt('rem3.14px')); //NaN
+                        console.log(parseFloat('rem3.14px')); //NaN
+
+                        //2.Number 将string转换为数值型
+                        var num = prompt('输入数');
+                        console.log(num); //string型
+                        console.log(Number(num)); //数值型
+                        console.log(12); //数值型
+                        console.log('12'); //string
+
+                        //3.利用算数运算- * / 隐式运算
+                        console.log('12' - 2);
+                        console.log('12' - '2');
+                        console.log(12 * 2);
+            */
+        /*
+                //转换布尔型，除了下面五类false，其他都是true
+                console.log(Boolean('')); //false
+                console.log(Boolean(0)); //false
+                console.log(Boolean(NaN)); //false
+                console.log(Boolean(null)); //false
+                console.log(Boolean(undefined)); //false
+
+                console.log(Boolean('小白'));
+                console.log(Boolean('12'));
+        */
+        /*
+                //字符串拼接
+                var a = null;
+                var b = undefined;
+                var c = false;
+                var d = true;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                console.log(d);
+                console.log(a + 1);//1 null为0
+                console.log(b + 1);//NaN
+                console.log(c + 1);//1 false为0
+                console.log(d + 1);//2 true为1
+                alert('100' + '100'); //string类型+，100100
+                alert(100 + 100); //数值型+， 200
+                alert('pig' + 20);
+                alert('pig' + '20');
+                
+                var sz = prompt('输入数字');
+                var sz1 = prompt('输入数字');
+                var and = Number(sz) + Number(sz1);
+                alert('你输入的数值是：' + and);
+                console.log(and);
+        */
+        /*
+        //今年多大
+         var sz = prompt('输入你的年龄');
+         alert('你的年龄是:' + sz + '岁');
+         */
+        /*
+        1.标识符：开发人员为变量，属性，函数，参数取的名字-------不能是关键字或保留字
+        2.关键字：js已有的名字，--------------不能充当变量名，方法名
+             if,in，do,var,for,new,try,case,with，void,else,this,break，catch,while,seitch,throw,typeof，return,continue,default,
+             delete,finally,funtion,instanceof等
+        3.保留字：预留“关键字”，现在不是关键字，以后可能成为关键字，-----------不能充当变量名，方法名
+        boolean,byte,char,class,const,debugger,double,enum,export,extends,fimal,float,goto,implements,import,int,interface,long,
+        mative,package,private,protected,public,short,static,super,synchronized,throws,transient,volatile等
+
+
+        */
+    </script>
+</head>
+
+<body>
+    <!-- <input type="button" value="点这里" onclick="alert('警告 警告!')">-->
+</body>
+
+</html>

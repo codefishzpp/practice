@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+</head>
+<style>
+    .jdy {
+        position: relative;
+        margin: 100px auto;
+        width: 800px;
+        height: 50px;
+        line-height: 50px;
+        background-color: rgb(0, 255, 157);
+    }
+    
+    li {
+        margin-right: 20px;
+        float: left;
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        display: block;
+        height: 100%;
+    }
+    
+    .cloud {
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 40px 0;
+        background-color: crimson;
+    }
+    
+    .current a {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="jdy">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">公司简章</a></li>
+            <li><a href="#">是的佩奇</a></li>
+            <li><a href="#">啥事佩奇</a></li>
+        </ul>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            var jdy = document.querySelector('.jdy');
+            var cloud = document.querySelector('.cloud');
+            var lis = document.querySelectorAll('li');
+            //给所有小li绑定事件
+            var current = 0;
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function() {
+                    animate(cloud, this.offsetLeft);
+                    console.log(this.offsetLeft);
+                })
+                lis[i].addEventListener('mouseleave', function() {
+                    animate(cloud, 0);
+                })
+                lis[i].addEventListener('click', function() {
+                    for (var i = 0; i < lis.length; i++) {
+                        lis[i].className = '';
+                    }
+                    lis[0].className = 'current';
+                    current = this.offsetLeft + 'px';
+                    animate(cloud, current);
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

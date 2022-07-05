@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(143, 138, 138);
+        }
+        
+        .box .tp {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            padding: 5px 10px 30px 10px;
+            margin-left: 20px;
+        }
+        
+        .box img {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .box i {
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: rgb(228, 224, 224);
+            margin-top: 0;
+        }
+        
+        .tp div {
+            text-align: center;
+            font-size: 15px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <i class="close-btn"> ×</i>
+        <div class="tp">
+            <div>淘宝二维码</div>
+            <img src="img/tb2wm.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        //1.获取元素
+        var btn = document.querySelector('.close-btn');
+        var box = document.querySelector('.box');
+        //2.注册事件 处理程序
+        btn.onclick = function() {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

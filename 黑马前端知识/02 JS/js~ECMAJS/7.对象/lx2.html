@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            //1.
+            /*var obj = {
+                color: 'red',
+                kg: 500,
+                pp: 'asus',
+                syF: function() {
+                    console.log('看电影、听音乐、打游戏、敲代码');
+                }
+
+            }
+            console.log(obj);
+            console.log(obj.kg);
+            console.log(obj['pp']);
+            obj.syF();
+
+            //2.
+            var obj = new Object();
+            obj.width = 20 + 'px';
+            obj.height = 20 + 'px';
+            obj.background = 'blue';
+            obj.xW = function() {
+                console.log('点击按钮');
+            }
+            console.log(obj);
+            console.log(obj.width);
+            console.log(obj['height']);
+            obj.xW();
+
+            //3.
+            function Car(zl, color, paiz) {
+                this.zhongl = zl;
+                this.color = color;
+                this.paiz = paiz;
+                this.sx = function(dz) {
+                    console.log(dz);
+                }
+            }
+            var car = new Car('100kg', 'pink', 'gongniu');//new至关重要
+            console.log(car);
+            car.sx('载人,拉货,耕耘');*/
+
+            //4.计算机
+            var num1, num2, sum;
+            var a = prompt('欢迎使用简易计算器：\n1.加法运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出\n请输入您的选项');
+            switch (a) {
+                case '1':
+                    num1 = prompt('请输入第一个数');
+                    num2 = prompt('请输入第二个数');
+                    sum = parseFloat(num1) + parseFloat(num2);
+                    alert('两数相加和为' + sum);
+                    break;
+                case '2':
+                    num1 = prompt('请输入第一个数');
+                    num2 = prompt('请输入第二个数');
+                    sum = parseFloat(num1) - parseFloat(num2);
+                    alert('两数相减为' + sum);
+                    break;
+                case '3':
+                    ;
+                    num1 = prompt('请输入第一个数');
+                    num2 = prompt('请输入第二个数');
+                    sum = parseFloat(num1) * parseFloat(num2)
+                    alert('两数相乘为' + sum);
+                    break;
+                case '4':
+                    num1 = prompt('请输入第一个数');
+                    num2 = prompt('请输入第二个数');
+                    sum = parseFloat(num1) / parseFloat(num2);
+                    alert('两数相除为' + sum);
+                    break;
+                default:
+                    alert('正在退出.....');
+            }
+
+            /* //1.翻转数组
+             function reverse(arr) {
+                 var a = [];
+                 for (var i = arr.length - 1; i >= 0; i--) {
+                     a[a.length] = arr[i];
+                 }
+                 return a;
+             }
+
+             var b = reverse([5, 4, 3, 2, 1]);
+             console.log(b);
+
+             //2.对数组进行排序
+             function mP(arr) {
+                 for (i = 0; i < arr.length - 1; i++) {
+                     for (j = 0; j < arr.length - 1 - i; j++) {
+                         if (arr[j] > arr[j + 1]) {
+                             var temp = arr[j];
+                             arr[j] = arr[j + 1];
+                             arr[j + 1] = temp;
+                         }
+                     }
+                 }
+                 return arr;
+             }
+             console.log(mP([5, 4, 3, 2, 1, 88]));
+             */
+        </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

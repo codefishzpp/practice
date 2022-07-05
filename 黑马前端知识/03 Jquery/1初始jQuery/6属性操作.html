@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <a href="https://www.baidu.com" title="111">都挺好</a>
+    <input type="checkbox" name="''" id="checked>">
+    <div index="1" data-index="2">我是div</div>
+    <span>122</span>
+    <script>
+        //1.数据缓存data():在指定的元素上存储数据，并不会修改dom元素结果，一旦页面刷新在，之前存放的数据将别移除
+        $(function() {
+            //1.element.prop('属性名'),获取元素固有的属性值
+            console.log($('a').prop('href'));
+            $('a').prop("title", "我变好了");
+            $('input').change(function() {
+                console.log($(this).prop('checked'));
+            });
+            //---------------------------------------
+            //console.log($('div').prop('index')); //underfined
+            //2.元素自定义属性，我们用attr
+            console.log($('div').attr('index')); //1
+            $('div').attr('index', 4);
+            console.log($('div').attr('index')); //4
+            console.log($('div').attr('data-index')); //2
+            //---------------------------------------
+            //3.数据缓存data()这个里面的数据是存放在元素的内存里面
+            $('span').data('uname', 'andy');
+            console.log($('span').data('uname')); //andy
+            //这个方法获取的data-index h5自定义属性 第一个 不用写data- 而且返回的数字型
+            console.log($('div').data('index'));
+
+        })
+    </script>
+</body>
+
+</html>

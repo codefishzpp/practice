@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.arguments：不确定多少参数时使用，它是当前函数的一个内置对象，arguments对象存储了传递的所有实参
+        /*argumens是一个伪数组，-----只有函数有arguments对象，因此可以进行遍历，伪数组具有以下特定啊：
+        1）有length属性
+        2）按索引方式存储数据
+        3）不具有数组push()，pop()等方法
+        */
+        /*function fn() { 
+            console.log(arguments);//存储了所有传递过来的实参 arguments=[1,2,3]
+            console.log(arguments.length);
+            for (var i = 0; i < arguments.length; i++) {//按照数组方式遍历arguments
+                console.log(arguments[i]);
+            }
+           
+        }
+        fn(1, 2, 3);
+        fn(1, 2, 3, 4, 5);
+*/
+
+        /*
+                //利用函数求任意个数的最大值
+                function getSun() {
+                    var max = arguments[0];
+                    for (var i = 1; i < arguments.length; i++) {
+                        if (arguments[i] > max) {
+                            max = arguments[i];
+                        }
+                    }
+                    return max;
+                }
+                var a = getSun(1, 2, 3, 55, 7, 11);
+                console.log(a);
+
+                //利用函数翻转任意数组reverse翻转
+                function reverse(arr) {
+                    var newArray = [];
+                    for (var i = arr.length - 1; i >= 0; i--) {
+                        newArray[newArray.length] = arr[i];
+                    }
+                    return newArray;
+                }
+                var arr1 = reverse([1, 2, 3, 4, 5]);
+                console.log(arr1);
+                var arr2 = reverse(['ping', 'blue', 'yellow']);
+                console.log(arr2);
+
+                //利用函数冒泡排序sort排序
+                function sort(arr) {
+                    for (var i = 0; i < arr.length - 1; i++) {
+                        for (var j = 0; j < arr.length - 1 - i; j++) {
+                            if (arr[j] > arr[j + 1]) {
+                                var temp = arr[j];
+                                arr[j] = arr[j + 1];
+                                arr[j + 1] = temp;
+                            }
+                        }
+                    }
+                    return arr;
+                }
+                var a = sort([1, 5, 7, 0, 0, 9, 3]);
+                console.log(a);
+
+
+                //利用函数判断是闰年还是平年----------函数之间可以调用
+                function bac(year) {
+                    if (pr(year)) {
+                        console.log(year + '是闰年2月有29天');
+                    } else {
+                        console.log(year + '是平年2月有28天');
+                    }
+                }
+                bac(2005);
+
+                function pr(year) {
+                    if (year % 4 == 0 && year % 100 !== 0 || year % 400 == 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+                var a = pr(2003);
+                console.log(a);
+                */
+
+        //2.函数的声明方式
+        //(1)利用函数的关键字自定义函数（命名函数）
+        function fn() {}
+        fn();
+        //(2)函数表达式（匿名函数）
+        //var 变量名=function(){};
+        var fun = function(ary) {
+            console.log('我是函数表达式');
+            console.log(ary);
+        }
+        fun('pig老师');
+        //fun是变量名，不是函数名
+        //函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值，而函数表达式黎明存的是函数
+        //函数表达式也可以进行传递参数
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

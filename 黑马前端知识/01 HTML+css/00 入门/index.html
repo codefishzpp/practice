@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"min='1'max='100'>
+    <input type="number"low='1'high='100'>
+   
+</body>
+<script>
+ var obj={
+     num:2,
+     getNum:function(){
+         console.log(this.num);
+     }
+ }
+ var getNum=obj.getNum;
+ obj.getNum()
+ getNum()
+
+
+
+ var s='string';
+ var n=0;
+ var b=true;
+ console.log(n||s);
+ console.log(n&&s);
+ console.log(b||n);
+ console.log(b&&n);
+</script>
+</html>

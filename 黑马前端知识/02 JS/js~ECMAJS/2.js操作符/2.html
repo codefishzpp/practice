@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 常用运算符:1.算术运算符; 2.递增和递减运算符;3.比较运算符;4.逻辑运算符;5.赋值运算符   */
+
+        /*
+                //1.算数运算符
+                console.log(1 + 1); //2
+                console.log(1 - 1); //0
+                console.log(2 * 5); //10
+                console.log(2 / 5); //0.4
+                console.log(5 % 2); //1 ------%取余（取模）
+
+                //2.浮点数算数运算符内会有问题
+                console.log(0.1 + 0.2); //0.30000000000000004
+                console.log(0.07 * 100); //7.000000000000001 不等于7
+                //3.表达式：由运算符、数字、变量等组成的式子
+                var num = 1 + 1;
+
+        */
+
+        /*
+         //1.前置递增和后置递增运算符
+         *前置++a:先+1，后赋值
+         *后置a++：先赋值，后+1
+         var nm = 5;
+         console.log('前置，第一个数字为：' + nm);
+         ++nm;
+         console.log('第二个数字为：' + nm);
+         console.log('\n');
+
+         var nm = 5;
+         console.log('后置，第一个数字为：' + nm);
+         var a = ++nm;
+         console.log('赋值给a后：a:' + a);
+         console.log('第二个数字为：' + nm);
+         console.log('\n');
+
+         var nm = 5;
+         console.log('前置，第一个数字为：' + nm);
+         nm++;
+         console.log('第二个数字为：' + nm);
+         console.log('\n');
+
+         var nm = 5;
+         console.log('后置，第一个数字为：' + nm);
+         var a = nm++;
+         console.log('赋值给a后：a:' + a);
+         console.log('第二个数字为：' + nm);
+         //例子
+         var e=10;
+         var f=e++ + ++e;
+         console.log(f);//10+12=22
+         */
+
+        /*//1.比较运算符 >, < ,>= ,<=,==,!=,===,!==
+        *  =:赋值，右侧值赋值给左侧
+        *  ==:数值相同即可
+        *  ===：要求值和数据类型都要相等
+        console.log(3== 3);//true
+        console.log(3 == '3');//false
+        
+        console.log(3 > 2);//true
+        console.log(5 > 9);//false
+        */
+
+        /*
+                //1.逻辑运算符
+                console.log(3 && 5); //5------左真得右值-左假得左值（逻辑与短路运算）
+                console.log(3 || 5); //3------左真得左值-左假得右值（逻辑或短路运算）
+                console.log(!0); //true
+
+                //0,'',null,undefined,NaN 都为假
+                console.log(0 || 5); //5
+                console.log('' || 5); //5
+                console.log(0 && 5); //0
+                //&&与
+                console.log(true && true); //true
+                console.log(true && false); //false
+                //||或
+                console.log(true || true); //true
+                console.log(true || false); //true
+                console.log(false || false); //false
+                */
+
+        //1.运算符优先级
+        /*() > 一元运算符 > 算数运算符 > 关系运算符 > 相等运算符 > 逻辑运算符 > 赋值运算符 > 逗号运算符 
+            一元运算符：++ --!, 非运算符很高(!) ;
+            算数： 先 * /,后+--; 
+            关系： > < >= ;
+            相等： == ,！ = , === ,！ == ;
+            逻辑： 先 && ,后 ||
+            赋值： =;
+            */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

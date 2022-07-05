@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.数组[1500,1200,2000,2100,1800]删超2000的，剩余放新数组
+        var arr = [1500, 1200, 2000, 2100, 1800];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] <= 2000) {
+                //newArr[newArr.length] = arr[i];
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+
+        //2. 数组['c','a','z','a','x']，去除重复的元素
+        function unique(arr) {
+            var narr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (narr.indexOf(arr[i]) === -1) {
+                    narr.push(arr[i]);
+                }
+            }
+            return narr;
+        }
+        var demo = unique(['c', 'a', 'z', 'a', 'x']);
+        console.log(demo);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

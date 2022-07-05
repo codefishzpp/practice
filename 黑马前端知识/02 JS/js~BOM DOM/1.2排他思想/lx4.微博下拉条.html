@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            float: left;
+        }
+        
+        ul p {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: rgb(228, 175, 137);
+        }
+        
+        ul li {
+            display: none;
+            width: 100px;
+            height: 40px;
+            background-color: silver;
+            border: 1px solid #666;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <p>商品介绍</p>
+            <li> 1111111</li>
+        </ul>
+        <ul>
+            <p>规格与包装</p>
+            <li>22222222</li>
+        </ul>
+        <ul>
+            <p>手机售后</p>
+            <li>3333333</li>
+        </ul>
+        <ul>
+            <p>商品评价</p>
+            <li>44444</li>
+        </ul>
+    </div>
+    <script>
+        var ul = document.querySelectorAll('ul')
+        var lis = document.querySelectorAll('li')
+        var ps = document.querySelectorAll('p')
+        for (var i = 0; i < ps.length; i++) {
+            //给四个小li排序号
+            ps[i].setAttribute('index', i);
+            ps[i].onmouseover = function() {
+                //1.点击某一个，当前这一个底色是红色，其余不变（排他思想）修改类名的方式
+                //干掉所有人，其余li的清除class类
+                for (var i = 0; i < ps.length; i++) {
+                    ps[i].style.backgroundColor = '';
+                }
+                //留下我自己
+                this.style.backgroundColor = 'red';
+
+                //2.下面显示内容块
+                var index = this.getAttribute('index');
+                console.log(index);
+                //干掉所有人，其余的li隐藏
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].style.display = 'none';
+                }
+                //留下我自己，对应li露出来
+                lis[index].style.display = 'block';
+            }
+            ps[i].onmouseout = function() {
+                this.style.backgroundColor = '';
+                lis[index].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

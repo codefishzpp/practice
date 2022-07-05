@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+		*box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行/列为。
+			默认值：content-box  不可继承
+		*值
+    		content-box 默认值，标准盒子模型。
+ 				width 与 height 只包括内容的宽和高， 不包括边框（border），内边距（padding），外边距（margin）。
+           		width = 内容区宽度，
+           		height = 内容区高度。
+          		宽度和高度都不包含内容的边框（border）和内边距（padding）。
+ 
+    		border-box:
+       			width 和 height 属性包括内容，内边距和边框，但不包括外边距。这是当文档处于 Quirks模式 时Internet Explorer使用的盒模型。
+       		维度计算为：
+          		 width = border + padding + 内容区 width，
+           		 height = border + padding + 内容区height。
+			 */
+			.d1{
+				margin: auto;
+				width:200px;
+				height:200px;
+				padding:50px;	
+				border:10px solid #000; 
+				box-sizing:border-box;
+				background-color: chartreuse;
+			}
+			#d1{
+				margin: auto;
+				width:200px;
+				height:200px;	
+				border:1px solid #000; 
+				box-sizing:border-box;
+				background-color: yellow;
+			}
+			.d2{
+				margin: 50px auto;
+				width:200px;
+				height:200px;
+				padding:50px;	
+				border:10px solid #000; 
+				background-color: royalblue;
+			}
+			
+			body{
+				font:20px helvetica;
+				text-align: center;
+			}
+			input{
+				width: 300px;
+				padding: 0 50px;
+				box-sizing: border-box;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="d1">box-sizing</div>
+		<div id="d1"> same d1</div>
+		<div class="d2">content-box </div>
+		<input type="text" "/>
+	</body>
+</html>

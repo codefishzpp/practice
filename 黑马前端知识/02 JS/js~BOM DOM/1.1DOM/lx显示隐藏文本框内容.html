@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 50px auto;
+            width: 700px;
+            height: 50px;
+            background: #666;
+            border: 3px solid blue;
+        }
+        
+        input {
+            float: left;
+            width: 80%;
+            height: 95%;
+            border: none;
+            outline: none;
+            color: blue;
+        }
+        
+        .ss {
+            text-align: center;
+            line-height: 50px;
+            height: 100%;
+            background-color: blue;
+            color: blue;
+            color: white;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" value="手机">
+        <div class="ss">搜索</div>
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        input.onfocus = function() {
+                //获得焦点 onfocus
+                if (this.value === '手机') {
+                    this.value = '';
+                }
+                this.style.color = 'red';
+            }
+            //失去焦点 onblur
+        input.onblur = function() {
+            if (this.value === '') {
+                this.value = '手机';
+            }
+            this.style.color = 'blue';
+        }
+    </script>
+</body>
+
+</html>

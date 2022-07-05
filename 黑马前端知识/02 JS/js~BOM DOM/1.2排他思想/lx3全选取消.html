@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../2.黑马前端/3.阿里百秀/bootstrap/css/bootstrap.min.css">
+</head>
+<style>
+    table {
+        margin: 200px auto;
+        font-size: 17px;
+    }
+    
+    tr {
+        background-color: rgb(230, 228, 228);
+    }
+    
+    td {
+        border: 1px solid #666;
+        padding: 3px 20px;
+    }
+    
+    table th {
+        padding: 20px;
+        background-color: royalblue;
+        text-align: center;
+        border: 1px solid #666;
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" value="全选按钮">
+                </th>
+
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" value="单选按钮">
+                </td>
+
+                <td> iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="单选按钮">
+                </td>
+
+                <td> ipad pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="单选按钮">
+                </td>
+
+                <td> ipad air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="单选按钮">
+                </td>
+
+                <td>apple watch</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var input1 = document.querySelector('thead').querySelector('input');
+        var input2 = document.querySelector('tbody').querySelectorAll('input');
+        //1.全选和取消全选，让下面复制框跟随全选按钮
+        //true就是选中，false未被选中
+        input1.onclick = function() {
+                console.log(this.checked);
+                for (var i = 0; i < input2.length; i++) {
+                    console.log(this.checked);
+                    input2[i].checked = this.checked;
+                }
+            }
+            //2.下面复选框全部被选中，上面才能被选中
+        for (var i = 0; i < input2.length; i++) {
+            input2[i].onclick = function() {
+                var flag = true;
+                //看四个键是否全部被选中
+                for (var i = 0; i < input2.length; i++) {
+                    if (!input2[i].checked) {
+                        flag = false;
+                        break;
+                    }
+
+                }
+                input1.checked = flag;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

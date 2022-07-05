@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			/*浮动提半层*
+			 *a: 当元素开启浮动，则分为两层背景和内容，而只浮动背景，故而浮动“一层”，即实际半层。
+			 * 	  相对定位提一层：即可覆盖在其他元素上面，相对定位不会脱离文档流，即使有位移也是保留原来位置。
+			 *b: z-index为1比a高，z-index为-1比a低
+			 */
+			
+			/*.d1{
+				width:200px;
+				height: 200px;
+				background-color: aquamarine;
+				float: left;
+			}
+			.d2{
+				width:300px;
+				height: 300px;
+				background-color: burlywood;	
+			}*/
+			.d1{
+				width:200px;
+				height: 200px;
+				background-color: aquamarine;
+				position: relative;
+				left: 200px;
+				top: 200px;
+			}
+			.d2{
+				width:300px;
+				height: 300px;
+				background-color: burlywood;	
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">wddiv</div>
+		<div class="d2">2div</div>
+	</body>
+</html>

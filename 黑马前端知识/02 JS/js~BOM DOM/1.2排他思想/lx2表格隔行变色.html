@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+        
+        thead tr {
+            background-color: rgb(147, 168, 231);
+        }
+        
+        table tr {
+            height: 30px;
+        }
+        
+        tbody td {
+            border-bottom: 1px solid #666;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th style="color: blue;">代码</th>
+                <th>名称</td>
+                    <th style="color: blue;">最新公布净值</th>
+                    <th style="color: blue;">累计净值</th>
+                    <th style="color: blue;">前单位净值</th>
+                    <th style="color: blue;">净值增长率</th>
+                    <th style="color: blue;">公布日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="color: blue;">003526</td>
+                <td style="color: blue;">农银金穗3个月定期开放债券</td>
+                <td style="color: red;">1.075</td>
+                <td style="color: red;">1.079</td>
+                <td style="color: red;">1.074</td>
+                <td style="color: red;">+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td style="color: blue;">270047</td>
+                <td style="color: blue;">广发理财30天债券B</td>
+                <td>0.903</td>
+                <td>3.386</td>
+                <td>0.000</td>
+                <td>0.000%</td>
+                <td>2019-01-16</td>
+            </tr>
+            <tr>
+                <td style="color: blue;">163417</td>
+                <td style="color: blue;">兴全和宜混合A</td>
+                <td style="color: green;">0.860</td>
+                <td style="color: green;">0.860</td>
+                <td style="color: green;">0.863</td>
+                <td style="color: green;">-0.382%</td>
+                <td style="color: green;">2019-01-16</td>
+            </tr>
+            <tr>
+                <td style="color: blue;">003929</td>
+                <td style="color: blue;">中银证券安进债券A</td>
+                <td style="color: red;">1.034</td>
+                <td style="color: red;">1.088</td>
+                <td style="color: red;">1.034</td>
+                <td style="color: red;">+0.077%</td>
+                <td>2019-01-16</td>
+            </tr>
+            <tr>
+                <td style="color: blue;">360020</td>
+                <td style="color: blue;">光大添天嬴月度理财债券B</td>
+                <td>0.950</td>
+                <td>3.557</td>
+                <td>0.000</td>
+                <td>0.000%</td>
+                <td>2019-01-16</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //1.排他思想
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < trs.length; i++) {
+
+            trs[i].onmouseover = function() {
+                for (var i = 0; i < trs.length; i++) {
+                    trs[i].style.background = '';
+                }
+                this.style.background = 'pink';
+            }
+        }
+        //2.移入，移除
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < trs.length; i++) {
+
+            trs[i].onmouseover = function() {
+                this.style.background = 'pink';
+            }
+            trs[i].onmouseout = function() {
+                this.style.background = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

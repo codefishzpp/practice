@@ -1,0 +1,7 @@
+
+.green{
+	background-color: #007AFF;
+	width: 750rpx;
+	height: 750rpx;
+}
+

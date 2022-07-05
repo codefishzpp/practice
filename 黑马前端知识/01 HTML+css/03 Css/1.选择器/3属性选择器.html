@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 1.存在和值选择器 
+				1） [attr]：该选择器选择    包含 attr 属性的所有元素，不论 attr 的值为何。
+				
+					
+				2） [attr=val]：该选择器     仅选择 attr 属性     被赋值为 val 的所有元素。
+					
+					
+				3） [attr~=val]：该选择器    仅选择 attr 属性的值（以    空格    间隔出多个值）中有包含 val 值的所有元素，
+					    比如位于被空格分隔的多个类（class）中的一个类。
+					}
+					
+			  2.子串值属性选择器
+				1） [attr|=val] : 选择attr属性的值以     val（包括val）或   val-开头   的元素
+					[attr^=val] : 选择attr属性的值以   val开头（包括val） 的元素。
+					[attr$=val] : 选择attr属性的值以   val结尾（包括val）的元素。
+					[attr*=val] : 选择attr属性的值中   包含字符串val   的元素。	
+			 */
+			[name]{
+				background-color: red;
+			}
+			
+			
+			[name="atguigu"]{
+				color:#0000FF;
+			}
+			
+			
+			[name~="atguigu"]{
+				color: yellow;
+			}
+			
+			
+			[name|="atguigu"]
+			{
+				background-color:pink;
+				}
+				
+			[name^="atguigu"]
+			{
+				background-color: #0000FF;
+			}
+			[name$="atguigu"]
+			{
+				background-color: white;
+			}
+			[name*="atguigu"]
+			{
+				color: plum;
+			}
+		</style>
+	</head>
+	<body>
+		<div name="atguigu atguigu-llc ">1李立超</div>
+		<div name="atguigu-xfz">2晓飞张</div>
+		<div name="atguigu atguigu-bhj ">3白浩杰</div>
+		<div name="atguigu">4腿长1米8</div>
+		<div name="atguigu-">5佟刚</div>
+		<div>6陈雷</div>
+		<div>7李贺飞</div>
+	</body>
+</html>

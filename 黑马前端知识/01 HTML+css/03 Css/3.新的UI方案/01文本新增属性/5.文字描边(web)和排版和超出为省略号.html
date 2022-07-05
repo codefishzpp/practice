@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 *文字描边*
+			 * 只有webkit内核才支持：-webkit-text-stroke
+			 * 格式：-webkit-text-stroke：n px color;
+			 * 
+			 * 文字排版*
+			 * direction:控制文字的方向，一定要配合unicode-bidi:bidi-override;来使用
+			 * direction:ltr （默认）文本方向从左向右
+			 * 			:rtl	文本方向从右向左	
+			 * 
+			 * 处理超出的省略号*
+			 * text-overflow :确定如何向用户发出未显示的溢出内容信号。它可以被剪切，显示一个省略号（'...'）
+			 * text-overflow :clip     修剪文本。(默认)
+			 * 				 :ellipsis 显示省略符号来代表被修剪的文本。
+			 * 			     :string   使用给定的字符串来代表被修剪的文本。
+			 */
+			h1{
+				margin: 50px auto;
+				text-align: center;
+				font:100px "微软雅黑";
+				height: 200px;
+				color: red;	
+				/*-webkit-text-stroke:2px pink ;*/
+				direction: rtl;
+				unicode-bidi: bidi-override;
+				}	
+				p{
+					width:300px;
+					border:1px solid #000;
+					font:14px/30px "宋体";
+					white-space:nowrap;
+					overflow: hidden;
+					text-overflow:ellipsis; 
+					
+				}
+		</style>
+	</head>
+	<body>
+		<h1>尚硅谷</h1>
+		<p>尚硅谷的张晓飞同志 你为什么你们有钱 昂？    vsefwgvew4f 为什么？ 昂？</p>
+	</body>
+</html>
+

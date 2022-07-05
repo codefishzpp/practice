@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{   
+            width: 200px;
+            height: 100px;
+            outline: none;
+            overflow: auto;
+            resize: none;
+        }
+        li{
+            position: relative;
+            border:1px solid black;
+            width: 200px;
+            height: 40px;
+            background-color: aqua;
+
+        }
+        a{
+            position: absolute;
+            right: 0;
+            bottom: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <textarea ></textarea><!--多行文本框，input单行文本框-->
+    <button>发布</button>
+    <ul>
+    </ul>
+    <script>
+    var ul=document.querySelector('ul');
+    var btn=document.querySelector('button');
+    var text=document.querySelector('textarea');
+     btn.onclick=function(){
+         console.log(text.value);
+        if(text.value==''){
+            alert('亲，你没输入内容哦')
+            return false;
+        }
+        else{
+             var li=document.createElement('li'); 
+             li.innerHTML=text.value+"<a href='javascript:;'>删除</a>";
+            //ul.appendChild(li);//顺，新内容在下面
+            ul.insertBefore(li,ul.children[0]);//新内容在上
+            var as=document.querySelectorAll('a');
+            for(var i=0;i<as.length;i++){
+                as[i].onclick=function(){
+                    //ul.removeChild(child);删除的是li，当前的a所在的li  this.parentNode;
+                    ul.removeChild(this.parentNode);
+                }
+            }
+           
+
+        }
+     }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<style type="text/css">
+			/*
+			 * 1.基本选择器
+				1）.通配符选择器
+				2）.id  #
+				3）.类	  .
+				4）.元素 元素名
+				5）.后代 空格
+				6）.分组 ，(结合符)
+				7）.css声明的优先级
+			*/
+			div{
+				width: 200px;color: red;
+			}
+			
+			
+			#d2{
+				color: blue;
+			}
+			
+			
+			.d1{
+				color: yellow;
+			}
+			
+			
+			div p{
+				background-color: palevioletred;
+			}
+			
+			
+			div ,span{
+				background-color: red;
+			}
+	</style>
+	</head>
+	<body>
+		<div >div1</div>
+		<div class="d1">ewgbcref</div>
+		<div id="d2">svregv re</div>
+		<div >
+			<p >askfnewibjvn</p>
+		</div>
+		<span>我是一个span</span>
+		
+	</body>
+</html>

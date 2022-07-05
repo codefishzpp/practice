@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+            <!-解决IE9以下浏览器对html5新增标签的不识别，并导致css不起作用的问题->
+          <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+          <!-解决IE9以下浏览器对css Media Query的不识别->
+          <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jQuery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                    <a class="navbar-brand" href="#">阿里百秀</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">咨询</a></li>
+
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" data-toggle="modal" data-target=".login">登录</a></li>
+                        <li><a href="#">注册</a></li>
+                    </ul>
+                    <!--模态框-->
+                    <div class="modal fade login" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">登录信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>One fine body&hellip;</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="header col-md-2">
+                <div class="logo">
+                    <a href="#">
+                    </a>
+                    <div class="nav">
+                        <ul>
+                            <li>
+                                <a href="#" class="glyphicon glyphicon-home">首页</a>
+                            </li>
+                            <li>
+                                <a href="#" class="glyphicon glyphicon-eye-close">咨询</a>
+                            </li>
+                            <li>
+                                <a href="#" class="glyphicon glyphicon-wrench">设计</a>
+                            </li>
+                            <li>
+                                <a href="#" class="glyphicon glyphicon-wrench">生活</a>
+                            </li>
+                            <li>
+                                <a href="#" class="glyphicon glyphicon-tasks">综合导航</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class=" article col-md-8">
+                <div class="news clearfix">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/002.jpg" alt="">
+                                <p>阿里百秀</p>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/003.jpg" alt="">
+                                <p>宝马 Heisenberg XF1 电动自行车</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/004.jpg" alt="">
+                                <p>宝马 Heisenberg XF1 电动自行车</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/004.jpg" alt="">
+                                <p>宝马 Heisenberg XF1 电动自行车</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/003.jpg" alt="">
+                                <p>宝马 Heisenberg XF1 电动自行车</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="publish">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h3>宝马 Heisenberg XF1 电动自行车</h3>
+                            <p class="text-muted hidden-xs">adm1n 发布于 2018-05-03</p>
+                            <p class="hidden-xs"> 设计邦BMW电动车i3和i8中的"i"符号是宝马的子品牌，该品牌主要代表着新能源汽车和新的移动解决方案。近日宝马公司表示，宝马的子品牌"i"品牌新申请的“摆动臂驱动装置”技术专利，将会被应用到量产版本的Heise......</p>
+                            <p class="text-muted">阅读（155）评论（2） 赞（18） 标签:健康/感染/皮肤</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="#" class=" hidden-xs">
+                                <img src="img/0.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h3>宝马 Heisenberg XF1 电动自行车</h3>
+                            <p class="text-muted hidden-xs">adm1n 发布于 2018-05-03</p>
+                            <p class="hidden-xs"> 设计邦BMW电动车i3和i8中的"i"符号是宝马的子品牌，该品牌主要代表着新能源汽车和新的移动解决方案。近日宝马公司表示，宝马的子品牌"i"品牌新申请的“摆动臂驱动装置”技术专利，将会被应用到量产版本的Heise......</p>
+                            <p class="text-muted">阅读（155）评论（2） 赞（18） 标签:健康/感染/皮肤</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="#" class=" hidden-xs">
+                                <img src="img/0.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h3>宝马 Heisenberg XF1 电动自行车</h3>
+                            <p class="text-muted hidden-xs">adm1n 发布于 2018-05-03</p>
+                            <p class="hidden-xs"> 设计邦BMW电动车i3和i8中的"i"符号是宝马的子品牌，该品牌主要代表着新能源汽车和新的移动解决方案。近日宝马公司表示，宝马的子品牌"i"品牌新申请的“摆动臂驱动装置”技术专利，将会被应用到量产版本的Heise......</p>
+                            <p class="text-muted">阅读（155）评论（2） 赞（18） 标签:健康/感染/皮肤</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="#" class=" hidden-xs">
+                                <img src="img/0.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h3>宝马 Heisenberg XF1 电动自行车</h3>
+                            <p class="text-muted hidden-xs">adm1n 发布于 2018-05-03</p>
+                            <p class="hidden-xs"> 设计邦BMW电动车i3和i8中的"i"符号是宝马的子品牌，该品牌主要代表着新能源汽车和新的移动解决方案。近日宝马公司表示，宝马的子品牌"i"品牌新申请的“摆动臂驱动装置”技术专利，将会被应用到量产版本的Heise......</p>
+                            <p class="text-muted">阅读（155）评论（2） 赞（18） 标签:健康/感染/皮肤</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="#" class=" hidden-xs">
+                                <img src="img/0.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h3>宝马 Heisenberg XF1 电动自行车</h3>
+                            <p class="text-muted hidden-xs">adm1n 发布于 2018-05-03</p>
+                            <p class="hidden-xs"> 设计邦BMW电动车i3和i8中的"i"符号是宝马的子品牌，该品牌主要代表着新能源汽车和新的移动解决方案。近日宝马公司表示，宝马的子品牌"i"品牌新申请的“摆动臂驱动装置”技术专利，将会被应用到量产版本的Heise......</p>
+                            <p class="text-muted">阅读（155）评论（2） 赞（18） 标签:健康/感染/皮肤</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="#" class=" hidden-xs">
+                                <img src="img/0.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aside col-md-2 ">
+                <a class=" banner hidden-xs">
+                    <img src="img/002 (1).jpg " alt=" ">
+                </a>
+                <a class="hot ">
+                    <span class="btn btn-primary ">热搜</span>
+                    <h4>HTML5游戏如何挣钱？</h4>
+                    <p class="text-muted "> 详细来说，HTML5游戏市场与原生App Store商业模式相比有着若干差异：与App Store发行商正在为满足玩家对高质量HTML5游戏的需求，而积极找寻和接洽开发商不同的是，像Softgames这个世界上最大的HTML5平台，对休闲游戏有强...</p>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

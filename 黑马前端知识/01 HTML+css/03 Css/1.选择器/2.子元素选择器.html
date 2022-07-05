@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		/*
+		  1.子元素选择器
+		1)子元素选择器		
+					也可称为直接后代选择器,此类选择器只能匹配到直接后代，不能匹配到深层次的后代元素
+		2)相邻兄弟选择器
+					它只会匹配紧跟着的兄弟元素
+		3)通用兄弟选择器
+					它会匹配所有的兄弟元素(不需要紧跟)
+		4)选择器分组		
+					此处的逗号我们称之为结合符
+		*/
+		
+		div> p{
+			color: red;
+		}
+		#wrap > .inner {color: pink;}	
+		#wrap #first + .inner {color: #f00;}
+		#wrap #first ~ div { border: 1px solid;}
+		h1,h2,h3{color: pink;}  
+	</style>
+	</head>
+	<body>
+		<div id="wrap">
+			那就发北京二
+			<p class="inner">lalallalalal</p>
+			<p> 2wfweg4we</p>
+			<p> 3wfweg4we</p>
+			<p> 4wfweg4we</p>
+			<p> 5wfweg4we</p>
+		</div>
+		<div id="first">
+			22222222222
+		<p class="inner">22lalallalalal</p>
+			<p> 6wfweg4we</p>
+			<p> 7wfweg4we</p>
+			<p> 8wfweg4we</p>
+			<p> 9wfweg4we</p>
+		</div>
+	</body>
+</html>

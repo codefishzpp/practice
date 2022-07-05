@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        overflow: auto;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        border: 5px solid #666;
+    }
+</style>
+
+<body>
+    <div>你哈阿工程技术把环境少时诵诗书所所所所所所所所所所所所所所少时诵诗书所所所所所所所所所所所所所所所所所所所所所所所所所所</div>
+    <script>
+        //scroll滚动的，动态得到元素的大小，滚动举例等
+        /*1.element.scrollTop:返回被卷上去的上侧高度，返回数值不带单位
+        2.element.scrollLeft::返回被卷上去的左侧高度，返回数值不带单位
+        3.element.scrollWidth:返回自身实际宽度，不含边框，返回数值不带单位
+        4.element.scrollHeight:返回自身实际宽度，不含边框，返回数值不带单位
+        */
+        var div = document.querySelector('div');
+        console.log(div.clientHeight); //120
+        console.log(div.scrollHeight); //272
+        //scroll事件，随滚动条滚动而变化
+        div.addEventListener('scroll', function() {
+                console.log(div.scrollTop);
+            })
+            //页面被卷去的头部兼容性解决方案以下写法：
+            //1.声明了DTD，使用document.documentElement.scrollTop
+            //2.未声明DTD，使用document.body.scrollTop
+            //3.新方法window.pageYOffset和window.pageXOffset,IE9开始支持
+        function getScroll() {
+            return {
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollLeft || 0
+            }
+        }
+
+
+        //3.总结：
+        //element.offsetHeight:返回自身包括padding,边框，内容区的高度，返回数值不带单位
+        //element.clientWidth:返回自身包括padding，内容区的宽度，不含边框，返回数值不带单位
+        //element.scrollWidth:返回自身实际宽度，不含边框，返回数值不带单位
+        /*
+        offset获取元素的位置
+        client：获取元素大小
+        scroll:获取滚动距离
+        注意：滚动页面的距离通过window.pageXOffset获得
+        */
+    </script>
+</body>
+
+</html>

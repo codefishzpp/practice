@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1{
+				width: 400px;
+				height: 400px;
+				font: 20px "微软雅黑";
+				color: white;
+				text-align: center;
+				
+				/** transition 属性设置元素当过渡效果，
+				 * 四个简写属性为:transition-property             指定CSS属性的name，transition效果
+				 *			   :transition-durationtransition    效果需要指定多少秒或毫秒才能完成
+				 *			   :transition-timing-function       指定transition效果的转速曲线
+				 *			   :transition-delay                 定义transition效果开始的时候
+				 * 
+				 ** transform属性应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等
+				 * :rotateX(n deg)   定义沿着 X 轴的 3D 旋转。
+				 * */
+				transition:5s linear;
+				margin:  100px auto;
+				text-shadow:2px 2px 2px red ;
+				-webkit-text-stroke: 2px aquamarine;
+			}
+			.d1>div{
+				width: 180px;
+				height: 180px;
+				margin: 10px;
+				box-sizing:border-box ;
+				float: left;
+				border: 1px solid blueviolet;
+				background-color:  blueviolet;
+				box-shadow: 0px 0px 20px yellow,inset 0px 0px 20px darkgoldenrod;
+				
+				
+			}
+			.d1>div:nth-child(1),.d1>div:nth-child(4){
+				border-radius: 0 50% 0;
+			}
+			.d1>div:nth-child(2),.d1>div:nth-child(3){
+				border-radius: 50% 0 50%;
+			}
+			.d1:hover{
+				transform: rotate(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>	
+		<div>4</div>
+		</div>
+	</body>
+</html>

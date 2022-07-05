@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let变量</title>
+</head>
+
+<body>
+    <script>
+        //声明 变量
+        let a;
+        let b, c, d;
+        let e = 100;
+        let f = 21,
+            g = 'asddff',
+            h = [];
+        //10变量不能重复声明
+        let star = 1;
+        //let star-2;
+        //2.块级作用域,全局，函数，eval
+        //作用域领域不仅仅是花括号，还包括if else for while内的花括号，都属于，且在块之外没用
+        {
+            let girl = 'bow'
+        }
+        console.log(girl);
+        //3.不存在变量提升
+        console.log(a); //underfine
+        var a = 11;
+        //变量提升为
+        var a;
+        console.log(a); //underfine
+        var a = 11;
+
+        //let
+        console.log(a); //报错
+        let a = 11;
+        //4.不影响作用域链
+        {
+            let school = '山龟骨';
+
+            function fn() {
+                console.log(school);
+            }
+            fn();
+        }
+    </script>
+</body>
+
+</html>

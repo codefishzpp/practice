@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <div>111111111</div>
+    <ul>
+        <li>ul我们都是好孩子</li>
+    </ul>
+    <ol>
+        <li>ol好孩子</li>
+    </ol>
+    <script>
+        $('ul').on('click', 'li', function() {
+            console.log(2222);
+        })
+        $('div').on('mouseenter mouseleave', function() {
+                console.log(11111);
+            })
+            //1.事件解绑off
+            // $('div').off();//解除div身上所有事件
+        $('div').off('mouseleave'); //解除div指定事件
+        //$('ul').off('click', 'li');
+        //------------------------
+        //2.one()只能触发一次事件
+        $('ol').one('click', 'li', function() {
+            console.log(33333);
+        });
+    </script>
+</body>
+
+</html>

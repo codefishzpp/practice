@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <div>1111</div>
+    <input type="text">
+    <script>
+        $(function() {
+            $('div').on('click', function() {
+                console.log(11);
+            });
+
+            //1元素.事件（）
+            // $('div').click();//触发元素默认行为
+            //2.元素.trigger（‘事件’）
+            // $('div').trigger('click'); //会触发元素默认行为
+            $('input').trigger('focus');
+            //3.元素.triggerHandout('事件')就是不会触发元素默认行为
+            $('div').triggerHandler('click');
+            $('input').on('focus', function() {
+                $(this).val('你好啊');
+            });
+            $('input').triggerHandler('focus');
+        })
+    </script>
+</body>
+
+</html>

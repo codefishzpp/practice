@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../2day2/js/jquery.min.js"></script>
+</head>
+<style>
+    div {
+        position: absolute;
+        top: 200px;
+        width: 200px;
+        height: 200px;
+        background-color: royalblue;
+    }
+    
+    p {
+        position: absolute;
+        top: 400px;
+        right: 0;
+    }
+</style>
+
+<body style="height:1000px">
+    <div></div>
+    <p>111111111111111111111</p>
+    <script>
+        $(function() {
+            $(document).scrollTop(100);
+            //scrollTop()：被卷曲的头部，scrollLeft();被卷去的左侧
+            //页面滚动事件
+            var boxTop = $('div').offset().top;
+            $(window).scroll(function() {
+                console.log($(document).scrollTop());
+                // console.log(boxTop);//200
+                if ($(document).scrollTop() >= boxTop) {
+                    $('p').fadeOut(2000);
+                } else {
+                    $('p').fadeIn(2000);
+                }
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>

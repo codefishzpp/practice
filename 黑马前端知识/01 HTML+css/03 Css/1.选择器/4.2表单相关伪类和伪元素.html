@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 * 伪类与伪元素选择器*
+			 1.表单相关伪类
+			 * 	:enabled	匹配可编辑的表单
+				:disable	匹配被禁用的表单
+				:checked	匹配被选中的表单
+				:focus		匹配获焦的表单
+				
+			 * contenteditable:
+			 
+			 * 2.伪元素
+				::after
+				::before
+				::firstLetter
+				::firstLine
+				::selection
+			 **/
+			input
+			{width:300px;
+			height:30px; 
+			color:#000;
+			}
+			input:enabled{
+				background-color: #0000FF;
+				
+			}
+			input:disabled{
+				background-color: red;
+			}
+			input:checked{
+				height: 100px;
+				width: 100px;
+				color: red;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+			input:focus{
+				background-color: yellow;
+			}
+			div:focus{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="这个可以被选中" />1111
+		<br />
+		<input type="text"  value="这个不可以被选中" disabled="disabled"/>2222
+		<input type="checkbox" />
+		<br  />
+		<input type="text"  value="" />3333
+		
+		<!--
+        	contenteditable 属性指定元素内容是否可编辑
+        		true 指定元素是可编辑的
+        		false 指定元素是不可编辑的
+        	注意： 当元素中没有设置 contenteditable 属性时，元素将从父元素继承。
+       -->
+		<div  contenteditable="true"></div>
+	</body>
+</html>

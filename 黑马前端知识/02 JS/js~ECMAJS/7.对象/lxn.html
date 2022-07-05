@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.随机生成一个1-10的数，并让用户输入数字
+        /*function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        var b = getRandom(1, 10);
+
+        while (true) {
+            var a = prompt('请输入一个数字');
+            if (a > b) {
+                alert('数字大了，继续猜');
+            } else if (a < b) {
+                alert('数字小了，继续猜');
+
+            } else {
+                alert('恭喜你，猜对了');
+                break;
+            }
+        }
+        //2.1.随机生成一个1-50的数，并让用户输入数字，且10次机会
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        var b = getRandom(1, 50);
+        var n = 0;
+        while (n <= 10) {
+            var a = prompt('请输入一个数字');
+            n++;
+            if (a > b) {
+                alert('数字大了，继续猜');
+            } else if (a < b) {
+                alert('数字小了，继续猜');
+
+            } else {
+                alert('恭喜你，猜对了');
+                break;
+            }
+        }
+        alert('10次已用完，欢迎下次光临')
+
+        //3.秒数倒数-------------------------------------------------------很重要
+        function getTime() {
+            var ndate = new Date();
+            var zdate = new Date('2021-7-27 0:0:0');
+            console.log(ndate);
+            console.log(zdate);
+            var n = +new Date();
+            var z = +new Date('2021-7-27 0:0:0');
+            var xj = (z - n) / 1000;
+            console.log(xj);
+            var t = parseInt(xj / 60 / 60 / 24);
+            t = t < 10 ? '0' + t : t;
+            var h = parseInt(xj / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(xj / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(xj % 60);
+            s = s < 10 ? '0' + s : s;
+            return t + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        console.log(getTime());
+
+        //4.查找所有o出现的次数和位置
+        var str = 'abcoefoxyozzopp';
+
+        var index = str.indexOf('o');
+        var num = 0;
+        while (index !== -1) {
+            num++; 
+            console.log('o出现的位置为'+index);
+            index = str.indexOf('o', index + 1)
+           
+        }
+        console.log('o出现的次数是：' + num);
+       
+        console.log( null===undefined);
+
+        //4.2 查[1,2.3,4,5,1]1出现的次数
+        var arr = [1, 2.3, 4, 5, 1];
+        var num = 0;
+        var index = arr.indexOf(1);
+        for (var i = 0; i < arr.length; i++) {
+            while (index !== -1) {
+                num++;
+                index = arr.indexOf(1, index + 1)
+            }
+        }
+        console.log(num);
+ */     
+        //5.判断字符串'abcofoxyozzopp'中出现次数最多的字符，并统计次数
+        //chatAt()--根据位置返回字符
+        var str = 'abcoefoxyozzopp';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) { //返回的位置
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+ /*        //有一个对象，来判断是否有该属性  对象['属性名'] 
+        var o = {
+            age: 18
+        }
+        if (o['sex']) {
+            console.log('有该属性');
+        } else {
+            console.log('无该属性');
+        }  
+
+       //5.'abaasdffggghhjjkkjhggfffff344343'
+        var str = 'abaasdffggghhjjkkjhggfffff344343';
+        console.log(str.length);
+        //12
+        console.log(str.charAt(0));
+        //13
+        console.log(str.indexOf('i'));
+        console.log(str.indexOf('c'));
+        index = str.indexOf('b');
+        var num = 0;
+        while (index !== -1) {
+            num++;
+            index = str.indexOf('b', index + 1);
+        }
+        if (num > 0) {
+            console.log('存在');
+        } else {
+            console.log('不存在');
+        }
+        //14
+        while (str.indexOf('g') !== -1) {
+            str = str.replace('g', '23');
+        }
+        console.log(str);
+        //15
+        str = str.substr('0', 5);
+        console.log(str);
+        //16
+        var str = 'abaasdffggghhjjkkjhggfffff344343';
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var index = str.charAt(i);
+            if (obj[index]) {
+                obj[index]++;
+            } else {
+                obj[index] = 1;
+            }
+        }
+
+        console.log(obj); */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

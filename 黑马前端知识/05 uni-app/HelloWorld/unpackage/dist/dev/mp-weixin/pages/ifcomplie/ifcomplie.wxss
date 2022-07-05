@@ -1,0 +1,22 @@
+
+.color{
+
+
+
+
+
+
+
+
+
+		background-color: yellow;
+	
+
+
+		background-color:black;
+	
+
+	width: 200rpx;
+		height: 200rpx;
+}
+

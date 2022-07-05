@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //内置对象：JS自带的 一些对象，这个对象供开发者使用，并提供一些最进基本必要的功能（属性和方法）
+        //优点：帮助快速开发；内置对象比如：Math,Date,Array,String等
+        // JS对象分为3类：自定义对象，内置对象，浏览器对象
+        // 前两种属于ECMAscript;第三个属于JS独有
+
+        /*//1.Math数学对象，不是构造函数，不用new调用，直接使用里面属性和方法即可
+        console.log(Math.PI);
+        console.log(Math.max(1, 55)); //55
+        console.log(Math.max(-1, -99)) //-1
+        console.log(Math.max(-1, 55, 'pignk')); //NaN
+        console.log(Math.max()); //-Infinity
+
+        //2.利用对象封装自己的数学对象，里面有PI最大值和最小值
+        var myMath = {
+            PI: 3.141592653,
+            max: function() {
+                var max = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+
+
+            min: function() {
+                var min = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+
+        }
+        console.log(myMath.PI);
+        console.log(myMath.max(1, 5, 9));
+        console.log(myMath.min(1, 5, 9));
+
+        //3.绝对值方法
+        console.log(Math.abs(-2)); //2
+        console.log(Math.abs(2)); //2
+        console.log(Math.abs('2')); //2,隐式转换 会把字符型 -1 转换为数字型
+        console.log(Math.abs('pink')); //NaN
+
+        //4.三个取整方法
+        //（1）Math.floor() 地板 向下取整  往最小了取值
+        console.log(Math.floor(1.1)); //1
+        console.log(Math.floor(1.9)); //1
+        //（2）Math.ceil() 天花板 向上取整  往最大了取值
+        console.log(Math.ceil(1.1)); //2
+        console.log(Math.ceil(1.9)); //2
+        //（3）Math.round() 四舍五入 其他数字都是四舍五入，但.5特殊 它往大了取
+        console.log(Math.round(1.1)); //1
+        console.log(Math.round(1.5)); //2
+        console.log(Math.round(1.9)); //2
+        console.log(Math.round(-1.1)); //-,
+        console.log(Math.round(-1.5)); //这个结果是-1
+
+        //5.Math对象---随机数方法 random()  返回一个随机的小数 x范围0~1，不包含1
+        //这个方法里不跟参数
+        //代码验证
+        console.log(Math.random());
+
+        //例子1：我们想要得到两个数之间的随机整数 并且 包含2个整数
+        //Math.floor(Math.random（）*（max-min+1)+min);
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log(getRandom(1, 10));
+
+        //例子2：随机点名
+        var arr = ['张三', '李四', '张三丰', '张三疯子'];
+        console.log(arr[0]);
+        console.log(arr[getRandom(0, arr.length - 1)]);
+
+        */
+        //6.Date（）日期对象 ----构造函数，必须用new来调整创建我们的日期对象
+        var arr = new Array(); //创数组
+        var obj = new Object(); //创对象
+        // 1).使用Date 若没有参数 返回当前系统的而当前时间
+        var date = new Date();
+        console.log(date);
+        // 2).参数常见的写法 数字型 2019.10.01;或字符串型'2019-10-1 8:8:8'
+        var date1 = new Date(2019, 10, 01);
+        console.log(date1); //返回的是11月，不是10月
+        var date2 = new Date('2019-10-1 8:8:8');
+        console.log(date2); //返回的是10月
+
+        // 3).格式化日期 时分秒
+        console.log(date.getHours()); //时
+        console.log(date.getMinutes()); //分
+        console.log(date.getSeconds()); //秒
+        //要求封装一个函数返回当时的时分秒 格式：08:08:08
+        function getTime() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTime());
+
+        // 4).获得Date总的毫秒数（时间戳） 不是当时时间的毫秒数 而是距离1970年1月1号过了多少毫秒数
+        //  (1).通过valueOf() getTime()
+        var date = new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        //  (2)简单的写法 （最常见的写法）
+        var date1 = +new Date(); //+new Date()返回的就是总的秒数
+        console.log(date1);
+        //  （3）H5新增的 获得的总秒数
+        console.log(Date.now());
+    </script>

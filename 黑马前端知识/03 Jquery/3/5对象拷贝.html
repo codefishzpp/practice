@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>'
+    <script src="js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // $.extend([deep], target, object1, [objectN])
+        //deep:设置为true深拷贝，默认false浅拷贝
+        //target:要拷贝的目标对象
+        //object1：待拷贝到第一个对象的对象
+        //object：待拷贝到第N个对象的对象
+        //1.浅拷贝：把被拷贝的对象  复杂数据类型中的地址  拷贝给目的对象；修改目标对象  会影响  被拷贝对象
+        //2.深拷贝：前面加true,完全克隆（拷贝的对象，而不是地址）；修改目标对象 会影响 被拷贝对象
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            }
+        }
+        var targetObj = {
+                id: 0,
+                msg: {
+                    sex: '男'
+                }
+            }
+            //$.extend(target, obj);
+            //$.extend(targetObj, obj);;
+            //console.log(targetObj); //ID：1，name:'andy';msg:{age:18}//会覆盖原来targetObj里面的数据
+            //1.浅拷贝，只拷贝复杂的数据类型
+            // targetObj.msg.age = 20;
+            // console.log(targetObj); //age:20
+            // console.log(obj); //age:20
+            //2.深拷贝，完全复制，若里面有不冲突的属性，会合并到一起
+        $.extend(true, targetObj, obj);
+        // console.log(targetObj);//会全覆盖targetObj原来的数据
+        targetObj.msg.age = 30;
+        console.log(targetObj); //age:30，sex：'男’
+        console.log(obj); //age:18
+    </script>
+</body>
+
+</html>

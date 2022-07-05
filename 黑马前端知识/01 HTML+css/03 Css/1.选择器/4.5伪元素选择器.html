@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 * 伪类与伪元素选择器*
+			 * 伪元素
+				::after        元素后添加东西
+				::before       元素前添加东西
+				::firstLetter  定义首字样式
+				::firstLine    定义首行样式
+				::selection  选中后，被用户高亮的部分
+			*/
+			div::after{
+				content: "我在内容后面";
+			}
+			div::before{
+				content: "qinam ian";
+			}
+			p::first-letter{
+			color: #f00;
+			font-size: 24px;
+			font-weight: bold;
+				}
+			p::first-line{
+				width: 20px;
+				background-color: red;
+			}
+			span::selection{
+				background: blue;
+				color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div><br/>2222222<br/></div>
+		<p>33333<br />
+			3333<br />
+			3333<br />
+		</p>
+		<span>44444444444444444444444444444444444444444444444444444444444444444444444</span>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .father {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 150px;
+    }
+    
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+        margin-left: 50px;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        //1.offset动态的到元素偏移，大小等；其返回是的数值不带单位
+        //2.offset系列属性
+        /*
+        element.offsetParent:返回作为该元素      带有定位的父级元素      ，如果父级都没有定位则返回body
+        element.offsetTop:返回元素相对带有定位父元素上方的偏移量
+        element.offsetLeft:返回带有相对定位父元素左边框的偏移
+        element.offsetWidth:返回自身包括padding,边框，内容区的宽度，返回数值不带单位
+        element.offsetHeight:返回自身包括padding,边框，内容区的高度，返回数值不带单位
+        
+*/
+        //offset系列:获取元素大小位置，用offset更合适；offsetWidth只读属性，只能获值不能赋值
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        //1.可以得到元素的偏移，位置返回的不带单位的数值
+        console.log(father.offsetTop); //150
+        console.log(father.offsetLeft); //150
+        //注意：以带有定位的父亲为准，若没定位或者没父亲，以body为准
+        console.log(son.offsetLeft); //50
+        //2.可以得到元素大小 宽度和高度，包含padding+border+width
+        console.log(son.offsetWidth); //100
+        console.log(son.offsetHeight); //100
+        //3.返回带有定位的父亲，否则返回的是body
+        console.log(son.offsetParent);
+        //返回父亲 是最近一级的父亲 亲爸爸 不管父亲有没有定位
+        console.log(son.parentNode);
+
+        //demo01鼠标在盒子内的坐标
+        /* var father = document.querySelector('.father');
+         var son = document.querySelector('.son');
+         father.addEventListener('click', function(e) {
+             var x = e.pageX - father.offsetLeft;
+             var y = e.pageY - father.offsetTop;
+             this.innerHTML = x + ':' + y
+             y;
+         })
+         */
+    </script>
+</body>
+
+</html>

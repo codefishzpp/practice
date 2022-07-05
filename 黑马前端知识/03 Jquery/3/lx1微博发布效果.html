@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <span>微博发布</span>
+        <textarea name="" id="" cols="30" rows="10" class="text"></textarea>
+        <button>发布</button>
+        <ul></ul>
+    </div>
+
+    <script>
+        $(function() {
+            //1.点击发布按钮，内容放ul中
+            $('button').on('click', function() {
+                    var li = $('<li></li>');
+                    li.html($('.text').val() + '<a href="javascript:;">删除</a>');
+                    $('ul').append(li);
+                    li.slideDown();
+                    $('.text').val();
+                })
+                //2.点击删除按键，删除这一行的li
+            $('ul').on('click', 'a', function() {
+                $(this).parent().slideUp(function() {
+                    $(this).remove();
+                })
+
+            })
+        })
+    </script>
+</body>
+
+</html>

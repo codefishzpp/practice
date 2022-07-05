@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+</head>
+<style>
+    .box {
+        margin: 100px 700px;
+        position: relative;
+    }
+    
+    span {
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        display: block;
+        z-index: 999;
+        width: 40px;
+        height: 40px;
+        background-color: rgb(216, 216, 216);
+    }
+    
+    .wt {
+        z-index: -1;
+        position: absolute;
+        text-align: center;
+        line-height: 40px;
+        width: 150px;
+        height: 40px;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span>←</span>
+        <div class="wt">问题反馈</div>
+
+
+    </div>
+    <script>
+        var span = document.querySelector('span');
+        var wt = document.querySelector('.wt')
+        span.addEventListener('mouseenter', function() {
+            animate(wt, -140, function() {
+                span.innerHTML = '→';
+            })
+
+        })
+        span.addEventListener('mouseleave', function() {
+            animate(wt, 40, function() {
+                span.innerHTML = '←';
+            })
+
+        })
+    </script>
+</body>
+
+</html>

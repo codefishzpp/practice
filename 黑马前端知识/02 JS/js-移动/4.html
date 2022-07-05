@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="del">清除所有数据</button>
+    <script>
+        //框架介绍，常用框架：Boostrap，Vue，angular，react等，既能开发pc端，也能开发移动端：大而全一整套解决方案
+        // 前端常用插件：swiper,superslide,iscroll等：小而专一，某个功能的解决方案
+        /*
+        本地存储：
+           1.数据存储在用户浏览器中
+           2.设置读取方便，甚至页面刷新不丢数据
+           3.容量较大，sessionStrorage约5M，localStorage约20M
+           4.只能存储字符串，可以对对象JSON.string（）编码后储存
+           */
+        //sessionStorage数据存储以及获得
+        /*
+        1.生命周期为关闭浏览器窗口
+        2.在同一个窗口（页面）下可以共享
+        3.以键值对的方式存储使用
+        */
+        var ipt = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var del = document.querySelector('.del');
+        //存储数据sessionStorage.setItem(key,value)
+        set.addEventListener('click', function() {
+                var val = ipt.value;
+                sessionStorage.setItem('uname', val);
+                sessionStorage.setItem('name', val);
+            })
+            //获取数据sessionStorage.getItem(key)
+        get.addEventListener('click', function() {
+                console.log(sessionStorage.getItem('uname'));
+            })
+            //删除数据sessionStorage.removetItem(key)
+        remove.addEventListener('click', function() {
+                sessionStorage.removeItem('uname');
+            })
+            //删除所有数据sessionStorage.clear()
+        del.addEventListener('click', function() {
+            sessionStorage.clear();
+        })
+
+        //localStorage
+    </script>
+</body>
+
+</html>

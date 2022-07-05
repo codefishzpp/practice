@@ -1,0 +1,1 @@
+<view class="radio"><view class="cont">标题</view><view class="content"><slot></slot></view></view>

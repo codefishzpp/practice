@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+                 <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <div>
+           <span>R:</span>
+        <input type="text" v-model.number='r'>  
+        </div>
+        <div>
+            <span>G</span>
+         <input type="text" v-model.number='g'>  
+         </div>
+         <div>
+            <span>B:</span>
+         <input type="text" v-model.number='b'>  
+         </div>
+         <!--专门用户呈现颜色的盒子-->
+         <!--:style代表动态绑定一个样式对象，它的值是一个{}样式对象
+        当前的样式对象中，只包含backgroundcolor背景颜色-->
+        <!--
+    <div class="box" :style="{backgroundColor:`rgb(${r},${g},${b})`}">
+                {{`rgb(${r},${g},${b})`}}
+            </div>
+
+        -->
+        <div class="box" :style="{backgroundColor:rgb}">
+            {{rgb}}
+        </div>
+         <button @click='show'>按钮</button>
+    </div>
+    <script>
+         var vm=new Vue({
+        el:'#app',
+        data:{
+            r:0,
+            g:0,
+            b:0,
+       
+        },
+       methods:{
+           //点击按钮，在终端显示最新的颜色
+           show(){
+               //console.log(`rgb(${this.r},${this.g},${this.b})`);
+               console.log(this.rgb);
+           },
+       },
+      // 所有计算属性，都要定义到computer节点之下
+      //计算属性在计算时，要定义成“方法格式”
+      computed:{
+          //rgb作为一个计算属性，被定义成发方法格式，
+          //最终。在这个方法中，要返回一个生成好的rgb(x,x,x)字符串
+          rgb(){
+              return `rgb(${this.r},${this.g},${this.b})`
+          }
+      }
+
+    });
+    console.log(vm)
+    </script>
+   
+</body>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+</html>

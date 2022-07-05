@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		/*   
+		 	*倒影*
+			 * -webkit-box-reflect  设置元素的倒影（准确的来说不能算是css3的东西，但需要大家知道）
+			 * 默认值:none  不可继承值：（必须是123的顺序）
+			 * 倒影的方向
+				    第一个值，above, below, right, left
+			 * 倒影的距离
+				    第二个值，长度单位
+			 * 渐变
+				    第三个值
+				线性渐变：linear-gradient(n deg,color px,color px)
+	 	*/			
+			img{
+				display: block;
+				width: 200px;
+				height: 200px;
+				margin: 200px auto;
+				-webkit-box-reflect:  right 20px linear-gradient(135deg,rgba(0,0,0,1)0,rgba(0,0,0,0)100%) ;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/周冬雨.jpg" />
+	</body>
+</html>

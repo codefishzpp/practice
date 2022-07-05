@@ -1,0 +1,26 @@
+.container{
+	/*定义flex容器*/
+	display: flex;
+	/*设置容器内部的排列方向
+	row:从左到右
+	row-reverse:从右到左
+	cow:从上到下
+	column-reverse：从下到上
+	
+	*/
+	flex-direction: column-reverse;
+}
+.txt{
+	font-size: 20px;
+	width: 150upx;
+	height: 150upx;
+}
+.blue{
+	background-color: blue;	
+}
+.green{
+	background-color: green;	
+}
+.red{
+	background-color: red;
+}

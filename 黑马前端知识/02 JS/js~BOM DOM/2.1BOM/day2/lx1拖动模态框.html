@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .kuang {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: none;
+        border-radius: 5px;
+        margin: 150px auto;
+        width: 500px;
+        height: 300px;
+        background-color: white;
+    }
+    
+    .user a {
+        display: block;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 50px;
+        margin: 30px 0;
+    }
+    
+    .close {
+        position: absolute;
+        top: -11px;
+        right: -15px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        font-size: 15px;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+    }
+    
+    input {
+        border: 1px solid #999;
+        border-radius: 5px;
+        outline: none;
+        height: 30px;
+        width: 350px;
+    }
+    
+    form {
+        margin: 15px 0;
+        font-size: 15px;
+        width: 500px;
+        height: 60px;
+    }
+    
+    .kuang .button {
+        margin: 0 150px;
+        width: 200px;
+        height: 40px;
+        font-size: 15px;
+        text-align: center;
+        background-color: rgb(230, 227, 227);
+        border: none;
+        border-radius: 4px;
+    }
+    
+    label {
+        text-align: center;
+        width: 100px;
+        margin-right: 2px;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        font-size: 15px;
+    }
+</style>
+
+<body>
+    <a href="javascript:;">点击，弹出登录框</a>
+    <div class="kuang">
+        <div class="close">关闭</div>
+        <div class="user"><a href="javascript:;">登录会员</a> </div>
+        <form action="#">
+            <label for="">用户名:</label> <input type="text" placeholder="请输入用户名" name="info[username]" id="username">
+        </form>
+        <form action="#">
+            <label for="">登录密码：</label> <input type="password" placeholder="请输入登录密码" name="info[password]" id="password">
+        </form>
+        <input type="submit" value="登录会员" class="button">
+    </div>
+    <script>
+        var a = document.querySelector('a');
+        var btn = document.querySelector('.button');
+        var close = document.querySelector('.close');
+        var kuang = document.querySelector('.kuang');
+        var body = document.querySelector('body')
+        var user = document.querySelector('.user');
+        a.addEventListener('click', function() {
+            kuang.style.display = 'block';
+            body.style.backgroundColor = '#666';
+        })
+        close.addEventListener('click', function() {
+            kuang.style.display = 'none';
+            body.style.backgroundColor = '';
+        })
+        user.addEventListener('mousedown', function(e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            document.addEventListener('mousemove', move)
+
+            function move(e) {
+                kuang.style.left = e.pageX - x + 'px';
+                kuang.style.top = e.pageY - y + 'px';
+            }
+            document.addEventListener('mouseup', function(e) {
+                document.removeEventListener('mousemove', move);
+            })
+        })
+    </script>
+</body>
+
+</html>

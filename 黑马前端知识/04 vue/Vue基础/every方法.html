@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+</head>
+
+<body>
+    <script>
+        const arr = [{
+                id: 1,
+                name: '西瓜',
+                status: true
+            }, {
+                id: 2,
+                name: '榴莲',
+                status: true
+            }, {
+                id: 3,
+                name: '草莓',
+                status: true
+            }]
+            //需求：判断水果是否被全部选中
+        const res = arr.every(item => item.status)
+        console.log(res); //全中true，全不中false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+<view><uni-badge vue-id="7119acf6-1" text="1" onVueInit="__l"></uni-badge><uni-badge vue-id="7119acf6-2" text="2" type="success" data-event-opts="{{[['^click',[['bindClick']]]]}}" onClick="__e" onVueInit="__l"></uni-badge><uni-badge vue-id="7119acf6-3" text="3" type="primary" inverted="{{true}}" onVueInit="__l"></uni-badge></view>

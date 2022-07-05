@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/home/home-recommend/index",
+    "pages/home/home-category/index",
+    "pages/home/home-new/index",
+    "pages/home/home-album/index",
+    "pages/uni-ui/uni-ui",
+    "pages/index",
+    "pages/uni-app/uni-app"
+  ],
+  "subPackages": [],
+  "window": {
+    "defaultTitle": "找你妹",
+    "titleBarColor": "#007AFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //流程控制：控制代码按照什么顺序执行，分为三种:顺序结构、分支结构、循环结构;
+        //分支较少用if...else语句;  分支较多用switch语句
+        /*//1.if分支语句
+        var a = prompt('请输入数字：');
+        if (a > 90)(
+            alert('真的好啊')
+        )
+        else if (a > 60) {
+            alert('继续加油啊')
+        } else {
+            alert('滚一边去')
+        }
+
+        //2.switch分支语句
+        注意：
+             1.as 和 case后的值的得全等，类型和值都得一样
+             2.case内没有break,不会退出switch，而是继续执行下一个case
+        var as = prompt('请输入杀的人数');
+        switch (as) {
+            case '1':
+                console.log('一杀');
+                break;
+            case '2':
+                console.log('二杀');
+                break;
+            default:
+                console.log('没用的家伙');
+
+        }
+         */
+        /* //3.三元表达式
+         //表达式 ? 结果1(真):结果2(假)
+         var a = 5 > 3 ? 25 : 15;
+         console.log(a);*/
+
+        //数字补0案例
+        var as = prompt('请输入一个数');
+        if (as < 10) {
+            alert('0' + as)
+        } else {
+            alert(as)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

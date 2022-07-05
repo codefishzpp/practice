@@ -1,0 +1,54 @@
+.container{
+	/*定义flex容器*/
+	display: flex;
+	/*设置容器内部的排列方向
+	row:从左到右
+	row-reverse:从右到左
+	cow:从上到下
+	column-reverse：从下到上
+	*/
+	flex-direction: row;
+	
+	
+	/*
+	设置容器中元素在交叉轴上的对齐方式
+	stretch:默认，当元素的高度没有设置，则元素的高度会拉伸至容器高度一致
+	flex-start:以最上面的x轴对齐
+	flex-end：以最下面的X轴对齐
+	center：以中间的x轴对齐
+	baseline:保证元素中文字在同一条基准线上
+	*/
+    align-items:baseline;
+	height: 800upx;
+	background-color:pink;
+}
+.txt{
+	font-size: 20px;
+	width: 150upx;
+	height: 150upx;
+}
+/*
+order:用于设置flex容器内部的每一个元素的而排列顺序，默认是0，从小到大
+flex-grow:用于设置元素比例的放大，默认为0，不放大
+flex-shrink:用于定义属性的缩放比例，默认为1，色设置为0的时候，不进行缩放
+flex-basis:设置元素固定或自动空间的占比
+*/
+.blue{
+	background-color: blue;	
+	/*order: 1;*/
+	/*flex-grow: 1;*/
+	/*flex-shrink:0*/
+	flex-basis:300upx ;
+}
+.green{
+	background-color: green;	
+	/*order:3*/
+	/*flex-grow: 0;*/
+	/*flex-shrink:1*/
+}
+.red{
+	background-color: red;
+	/*order:2*/
+	/*flex-grow: 1;*/
+	/*flex-shrink:1*/
+}

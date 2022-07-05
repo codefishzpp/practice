@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./node_modules/axios/dist/axios.js"></script> -->
+    <div class="text">11111
+    </div>
+    <style>
+        .text {
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* 方法一
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; */
+            /* 方法2
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const a = [1, 2, 3, 4, 3, 2];
+        let b = a.sort(function(a, b) {
+            return a - b;
+        });
+        console.log(b);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kj {
+            position: relative;
+            margin: 100px auto;
+            width: 800px;
+            border-bottom: 1px solid #666;
+        }
+        
+        input {
+            width: 600px;
+            height: 50px;
+            border: none;
+            outline: none;
+            /*点击不会有框*/
+            font-size: 40px;
+        }
+        
+        .kj .img {
+            position: absolute;
+            right: 150px;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background: url(img/jd.png) no-repeat -41px 3px;
+        }
+        
+        .img1 {
+            position: absolute;
+            right: 150px;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background: url(img/jd.png) no-repeat -41px -44px;
+        }
+        
+        .kj a {
+            position: absolute;
+            right: 73px;
+            bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kj">
+        <input type="password" name="" id="pwd">
+        <div class='img'></div>
+        <a>忘记密码</a>
+        <script>
+            //1.获取元素
+            var pwd = document.getElementById('pwd');
+            var img = document.querySelector('.img')
+                //2.注册事件 处理程序
+            var flag = 0;
+            //点击一次flag移一定要发生变化
+            img.onclick = function() {
+                if (flag == 1) {
+                    pwd.type = 'text';
+                    this.className = 'img1';
+                    flag = 0;
+                } else {
+                    pwd.type = 'password';
+                    this.className = 'img';
+                    flag = 1;
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

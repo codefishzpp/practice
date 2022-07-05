@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 * border-radius :用来设置边框圆角
+			 * 默认值  :  0  不可继承
+			 * 值：
+       				1)固定的px值定义圆形半径或椭圆的半长轴，半短轴。不能用负值	
+					2)百分比（指定w/h的百分比）最多50%，》50%效果=50%	
+				取1个值：四角	；
+				取2个值：上左下右   上右下左	；
+				取3个值：上左  上右下左  下右       ；
+				取4个值：上左  上右  下右  下左   	；（顺时针）
+							
+			 * 使用一个半径--确定一个圆形；border-radius：r;
+			 * 使用两个半径--确定一个椭圆:border-radius:r1/r2;
+			 */
+			div{
+				margin: auto;
+				width: 700px;
+				height: 300px;
+				border: 5px solid deeppink;
+				border-radius:30% 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

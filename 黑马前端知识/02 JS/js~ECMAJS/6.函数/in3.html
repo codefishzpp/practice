@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.js作用域：就是代码名字（变量）在某个范围内起作用和效果；目的：提高程序的可靠性更重要的是减少命名冲突
+        //2.js作用域（es6)之前：全局作用域  局部作用域
+        //3.全局作用域：整个script标签或者一个单独的js文件
+        /*
+          var num = 10;
+          var num = 20;
+          console.log(num); //20
+          //4.局部做作用域（函数作用域）：在函数局部就是局部作用域，且代码名字只在函数内部起作用
+          function fn() {
+              //局部作用域
+              var num = 30;
+              console.log(num);//30
+          }
+          fn();
+          */
+
+        /*
+        //变量的作用域：根据作用域的不同我们变量分为全局变量和局部变量
+        //1.全局变量：在全局作用域下的变量 在全局下都可以使用
+        //注意: 如果在函数内部 -> 没有声明直接赋值的变量   也属于全局变量
+
+        var num = 10; //全局变量
+        console.log(num);
+
+        function fn() {
+            var num = 20; //局部变量
+            a = 5; //全局变量
+            console.log(num);
+        }
+        //2.局部变量 在局部作用域下的变量 后者在函数内部的变量就是 局部变量
+        //注意：函数的形参也堪称局部变量
+        function fn(num1, num2) { //num1,um2属于局部变量
+            var num = 20; //局部变量，只能在函数内部使用
+            console.log(num1 + num2);
+        }
+        fn(1, 2);
+
+        //注意：js没有块级作用域 ,在es6新增块级作用域
+        //块级作用域{}  if{}  for{}
+        //java 
+        if(xx){
+            int num=10;
+        }//外面不能调用num
+        if (3 < 4) {
+            var num = 5;
+        }
+        console.log(num);
+*/
+
+        //作用域链：内部函数访问外部函数的额变量，采取链式查找的方式来决定取哪个值
+        var num = 10;
+
+        function fn() { //外部函数
+            var num = 20;
+
+            function fun() { //内部函数
+                fn();
+                console.log(num);
+            }
+        }
+        //就近原则
+        //案例1：结果是几--------123
+        function f1() {
+            var num = 123;
+
+            function f2() {
+                console.log(num);
+            }
+            f2();
+        }
+        var num = 456;
+        f1();
+
+        //案例2：结果是几
+        var a = 1;
+
+        function fn1() {
+            var a = 2;
+            var b = '22';
+            fn2();
+
+            function fn2() {
+                var a = 4;
+                console.log(a); //4
+                console.log(b); //22
+            }
+        }
+        fn1();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

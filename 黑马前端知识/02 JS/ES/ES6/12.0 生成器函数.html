@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数</title>
+</head>
+
+<body>
+    <script>
+        // 生成器是一个特殊的函数 
+        // 异步编程 纯回调函数 node fs ajax mongodb
+        // 函数代码分隔符
+        function* gen(arg) {
+                console.log(arg);
+                let one = yield '没研究';
+                console.log(one); //BBB
+                let on = yield '没脖子';
+                console.log(on);
+                let o = yield '真奇怪';
+                console.log(o);
+            }
+            //执行获取迭代器对象
+        let iterator = gen('AAA');
+        console.log(iterator.next());
+        //next的方法传入实参
+        console.log(iterator.next('BBB'));
+        console.log(iterator.next('CCC'));
+        console.log(iterator.next('DDD'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+    <div>1</div>
+    <div>2</div>
+    <ul>
+        <li>知否知否，应有弹幕在手</li>
+        <li>知否知否，应有弹幕在手</li>
+        <li>知否知否，应有弹幕在手</li>
+        <li>知否知否，应有弹幕在手</li>
+        <li>知否知否，应有弹幕在手</li>
+    </ul>
+    <a href="https:www.baidu.com">跳转</a>
+    <script>
+        //Dom事件流：事件发生时会在元素节点之间按照规定的特定的顺序传播
+        //事件流：从页码中接收事件的顺序
+        //事件流分三个阶段：
+            //1）捕获阶段：网景最早提出，由dom最顶点节点开始，然后逐级向下传播到最具体的元素接受的过程；document->html->body->div(div处于目标阶段)
+            //2）当前目标阶段；
+            //3）冒泡阶段：ie最早提出，事件具体的元素接受，然后逐级向上传播到dom最顶层节点的过程document<-html<-body<-div(div处于目标阶段)
+        //实际开发更多关注冒泡，很少使用捕获；有些事件没有冒泡：onblur.onfocus,onmouseenter,onmouseleave；
+        //eventTarget.addEvenListener(type,linstener[,useCapture])，第三参数是true:捕获阶段调用事件处理程序；若是false或者省略：冒泡阶段调用事件处理程序
+        //注意事项：1.Js代码中只能执行捕获或者冒泡其中的一个阶段
+        //2.onclick,attachEvent(ie)只能得到冒泡阶段
+        //3.捕获阶段，如果addEventListener第三参数是true，则处于捕获阶段
+      /*  var son=document.querySelector('.son');
+        son.addEventListener('click',function(){
+            alert('son');
+        },false)
+        var father=document.querySelector('.father');
+        father.addEventListener('click',function(){
+            alert('father');
+        },false)
+        document.addEventListener('click',function(){
+            alert('document')
+        })//son->father->body->html->document
+        
+*/
+        //事件对象
+        /*
+        1.event就是一个事件对象，写到侦听参数内，看做形参
+        2.事件对象只有有了事件才存在，是系统自动创建的，不需要传递参数
+        2.事件对象是一系列相关数据的集合，跟书事件相关
+        4.事件对象可以自己命名如event,evt e
+        5.事件对象也有兼容性问题ie678通过window.event兼容性写法e=e||window.event
+        
+        var div=document.querySelector('div');
+        div.onclick=function(e){
+           // console.log(e);
+           // console.log(window.event);
+           e=e||window.event
+           console.log(e);
+        }
+*/
+        //事件对象常见的属性和方法
+        /*
+        e.target:返回出发事件的对象，标准
+        e.srcElement:返回出发事件的对象，非标准，ie678用
+        e.type:返回事件类型，click,mouseover不带on
+        e.cancelBubble ：该属性阻止冒泡 非标准ie678用
+        e.returnValue ：该属性 阻止默认事件（默认行为）非标准ie678用。比如不让链接跳转
+        e.preventDefault()：该方法 阻止默认事件（默认行为）标准。比如不让链接跳转
+        e.stopPropagation()：阻止冒泡 标准
+        
+       //1.e.target：返回出发事件的对象（元素），this返回的是绑定事件的对象（元素）
+       //区别：e.target点击哪个元素就返回哪个元素（可多个）；this的元素绑定哪个事件，就返回这个元素（只有一个）
+        var li=document.querySelector('li');
+        li.addEventListener('click',function(e){
+            console.log(e.target);//li
+            console.log(this);//li
+        }) 
+        var ul=document.querySelector('ul');
+        ul.addEventListener('click',function(e){
+            console.log(e.target);//li,被点击的是li
+            console.log(this);//ul
+        })
+        //了解兼容性
+        div.onclicl=function(){
+            e=e||window.event;
+            var target=e.target||e.srcEvement;
+            console.log(target);
+        }
+        //了解跟this相似的属性，currentTarget ie678不认识
+       
+        //2.e.type:返回事件类型
+        var div=document.querySelector('div');
+        div.addEventListener('click',fn)
+        div.addEventListener('mouseover',fn)
+        div.addEventListener('mouseout',fn)
+        function fn(e){
+            console.log(e.type);
+        }
+
+       // 3. e.preventDefault()阻止默认事件（默认行为）标准。比如不让链接跳转
+        var a=document.querySelector('a')
+       a.addEventListener('click',fnn)
+       function fnn(e){
+           e.preventDefault();//dom标准写法
+       } 
+       //3.传统的注册方式
+       var a=document.querySelector('a')
+       a.onclick=function(e)
+        {
+        //普通浏览器e.preventDefault()方法
+        //e.preventDefault();
+        //低版本浏览器 returnValue 属性
+        //e.returnValue;
+        //我们利用return false 阻止默认行为，没兼容性问题，特点：return 后面代码不执行了，而且只局限于传统注册方式
+        return false;
+        alert(11);
+        }
+
+        //面试重点------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //阻止冒泡 dom推荐的标准 stopPropagation(){
+            var son=document.querySelector('.son');
+            son.addEventListener('click',function(e)
+            {
+            alert('son')
+            e.stopPropagation();//stop停止 propagation传播
+            e.cancelBubble=true;//非标准 cancle 取消bubble泡泡
+            },false);
+            var father=document.querySelector('.father');
+            father.addEventListener('click',function(){
+                alert('father');
+            })
+            document.addEventListener('click',function(){
+                alert('document');
+            })
+        
+
+        //事件委托（代理、委派）  //面试重点--------------------------------------------------------------------------------------------------------------------------------------
+        //原理：不是每一个子节点单独设置监听器，而是事件监听器设置在其父节点上，然后利用冒泡原理影响设置每一个子节点
+        var ul=document.querySelector('ul');
+        ul.addEventListener('click',function(e){
+            //alter('知否知否，应有弹幕在手')
+            //e.targer这个可以得到我们的点击对象
+            e.target.style.color='pink';
+        })
+
+        //字体无法复制粘贴
+        //1.contextmenu可以禁用右键菜单
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();
+        })
+        //2.禁止选中文字 selectstart
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault();
+        })*/
+
+        //鼠标事件对象
+        //event:对象代表的状态，鼠标事件对象：MouseEvent,键盘事件对象：KeyboardEvent
+        /*e.clientX:返回鼠标相对于浏览器窗口可视区的X坐标
+        e.clientY：返回鼠标相对于浏览器窗口可视区的Y坐标
+        e.pageX：返回鼠标相对于文档页码可视区的Y坐标，ie9+支持
+        e.pageY：返回鼠标相对于文档页面可视区的Y坐标，ie9+支持
+        e.screenX：返回鼠标相对于电脑屏幕的X坐标
+        e.screenY:返回鼠标相对于电脑屏幕的Y坐标
+        
+        document.addEventListener('click',function(e)
+        {
+            //1. click鼠标在可视区的x ,y坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log('-------------------------');
+
+            //2. page鼠标在页面文档的x ,y坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log('-------------------------');
+
+            //3. screen鼠标在电脑屏幕的x ,y坐标
+            console.log(e.screenX);
+            console.log(e.screenY);
+            console.log('-------------------------');
+        })*/
+       
+        //常见的键盘事件
+        /*
+        onkeyup:某个键盘按键被松开时触发
+        onkeydown:某个键盘按键被按下时触发
+        onkeypress:某个键盘按键被按下时触发，但不识别功能键，如crtl,shift，左右箭头等
+        三个箭头的执行顺序为：keydown--keypress--keyup
+       /
+       /1.
+       document.addEventListener('keyup',function(){
+           console.log('我弹起了');
+       })
+       //2.
+       document.addEventListener('keydown',function(){
+           console.log('我按下了down');
+       }) 
+       //3.
+       document.addEventListener('keypress',function(){
+           console.log('我按下了press');
+       })*/
+
+       //键盘事件对象
+       //keyCode   返回该舰的AscII值
+       //onkeydown,onkeyup不区分字母大小，onkeypress区分字母大小
+       //实际开发使用keyup,keydown多，因为可以识别所有键
+       //keyCode属性区分大小写，返回不同的ASCII值
+       document.addEventListener('keyup',function(e){
+           console.log('up:'+e.keyCode);
+           if(e.keyCode==65){
+               alert('你按下了a键')
+           }
+           else{
+            alert('你没按下了a键')
+           }
+       })
+       //都是65
+       document.addEventListener('keypress',function(e){
+           console.log(e);
+           console.log('press:'+e.keyCode);
+       })//a:97,A:65
+    </script>
+</body>
+</html>

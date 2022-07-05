@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象扩展</title>
+</head>
+
+<body>
+    <script>
+        //1.Object.is判断两个值是否完全相等
+        console.log(Object.is(120, 120));
+        console.log(Object.is(NaN, NaN)); //true
+        console.log(NaN === NaN); //false
+
+        //2.Object.assign对象的合并
+        //前后属性一致：后面覆盖前面；
+        //前后属性不一致：并集
+        const con1 = {
+            host: 'location',
+            port: 3306,
+            name: 'root',
+            pass: 'root',
+            test: 'test1'
+        };
+        const con2 = {
+            host: 'segnfn',
+            port: 80,
+            name: 'zpp',
+            pass: 'pp',
+        }
+        console.log(Object.assign(con1, con2));
+
+        //3.Object.setPrototypeOf设置原型对象 Object.getPrototypeOf
+        const school = {
+            name: '尚硅谷',
+        };
+        const citis = {
+            xiaoqu: ['北京', '上海']
+        }
+        Object.setPrototypeOf(school, citis);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+    </script>
+</body>
+
+</html>

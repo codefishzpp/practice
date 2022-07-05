@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.基本包装类型：把简单的数据类型包装成复杂数据类型，这样数据类型就有了属性和方法
+        /* var str = 'andy';
+        console.log(str.length);
+        //上面可以运行，其实js把上面简单数据类型变成复杂的数据类型，如下处理
+        var temp = new String('andy'); //生成临时便令，把简单数据类型变成复杂的数据类型
+        str = temp; //赋值声明的字符变量
+        temp = null; //销毁临时变量
+
+        //2.字符串不可变
+        var a = 5;
+        a = 10;
+        //值不可变的，只是地址变了，内存新开辟了内存空间
+
+        //下面得花很久去显示，因为需要不断开辟新空间
+        var str = '';
+        for (var i = 0; i < 100; i++) {
+            str += i;
+        }
+        console.log(str);
+*/
+        //3.字符串对象 str.indexOf('要查找的字符'，[起始的位置])
+        var str = '改革春风吹满地';
+        console.log(str.indexOf('春')); //2
+        console.log(str.indexOf('春', 3)); //-1
+
+        //4.根据位置返回字符
+        //1）charAt(index)
+        var str = 'andy';
+        console.log(str.charAt(3)); //y
+        //2)charCodeAt(index)返回索引号的ASCII值，目的：判断用户按下了那个键
+        console.log(str.charCodeAt(0)); //97
+        //3)str[index] H5 新增的
+        console.log(str[0]); //a
+
+        //5.遍历对象
+        var max = 0;
+        var ch = '';
+        var o = {};
+        for (var k in o) {
+            if (o[k] > max) { //k属性名，o[k]得到的属性值
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符是' + ch);
+
+        //字符串操作方法
+        //1.concat(字符串1，字符串2.....)---连接
+        var str = 'andy';
+        console.log(str.concat(' red'));
+        //2.substr('截取起始位置'，'截取几个字符');
+        var str = '改革春风吹满地';
+        console.log(str.substr(2, 2)); //春风
+        //3.replace('被替换的字符'，'替换为字符')---替换字符，只会替换第一个字符
+        //把'abcoefoxyozzpp'所有o替换成*
+        var str = 'abcoefoxyozzpp';
+        while (str.indexOf('o') !== -1) {
+            str = str.replace('o', '*');
+        }
+        console.log(str);
+        //4.split('分隔符')  前面的join把数组转换为字符串
+        var str = 'andy,5,8';
+        str.split(',');
+        console.log(str);
+        var str = 'andy$5$8';
+        str.split('$');
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div></div>
+    <script>
+        //触屏事件touch(也称触摸事件)
+        //移动端兼容性好，不需要考虑以前js兼容性问题
+        //touch：代表一个触摸点，可能是一根手指也可能是一个触摸笔，触屏事件可以响应手指或者触摸笔对屏幕或者触控板的操作
+        // 1.常见触屏事件：
+        /*touchstart:手指触摸到一个dom元素触发
+        touchmove:手指在一个dom元素上滑动触发
+        touchend:手指从一个dom元素上移开时触发
+        var div = document.querySelector('div');
+        //1
+        div.addEventListener('touchstart', function(e) {
+                // console.log('我被摸了');
+                //console.log(e);
+                //touches正在触摸屏幕的所有手指列表
+                //targetTouches正在触摸当前Dom元素的手指列表
+                //如果侦听的是一个元素列表，他们两个一样的
+                //changedTouches手指状态发生了改变的列表 ，从无到有，从有到无
+                //因为都是触摸元素，所有经常使用targetTouches
+                console.log(e.targetTouches[0]);
+                //targetTouches[0]可以得到正在触摸dom元素的第一个手指的相关信息，比如手指的坐标等等
+            })
+            //2.
+        div.addEventListener('touchmove', function() {
+                console.log('我在滑动了');
+            })
+            //3.
+        div.addEventListener('touchend', function() {
+            console.log('我走了');
+        })*/
+        //2.拖动用targetTouches[0]里面的pagex,pagey
+        //3.移动拖动原理：手指移动中，计算手指移动的距离，然后盒子原来的位置+手指移动的距离
+        //4.手指移动的距离：手指滑动的距离减去手指刚开始触摸的位置
+        //注意：手指移动也会触发滚动屏幕所有这里要阻止默认屏幕滚动，e.preventDefault();
+        //1）touchstar:获取手指初始坐标，同时获得盒子的位置
+        //2)touchmove:计算手指滑动距离，并且移动盒子
+        //3）touchend：
+        var div = document.querySelector('div');
+        var startX = 0; //手指初始位置
+        var startY = 0;
+        var x = 0; //盒子初始位置
+        var y = 0;
+        div.addEventListener('touchstart', function(e) {
+            //获取手指初始坐标，同时获得盒子的位置
+            startX = e.targetTouches[0].pageX;
+            startY = e.targetTouches[0].pageY;
+            x = this.offsetLeft;
+            y = this.offsetTop;
+            //console.log(x + ':' + y + ',' + startX + ';' + startY);
+        });
+        div.addEventListener('touchmove', function(e) {
+            //计算手指滑动距离，并且移动盒子
+            var movex = e.targetTouches[0].pageX - startX;
+            var movey = e.targetTouches[0].pageY - startY;
+            this.style.left = x + movex + 'px';
+            this.style.top = y + movey + 'px';
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

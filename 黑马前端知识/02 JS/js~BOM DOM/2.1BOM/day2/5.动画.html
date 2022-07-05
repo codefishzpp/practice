@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        /*必须加定位*/
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    
+    span {
+        position: absolute;
+        left: 200px;
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        opacity: 0.5;
+    }
+</style>
+
+<body>
+    <div></div>
+    <span>夏雨荷</span>
+    <button class="btn800">点我800</button>
+    <button class="btn500">点我500</button>
+    <script>
+        //动画原理
+        //1.获得盒子当前位置
+        //2.让盒子在当前的位置加入1个移动距离
+        //3.利用定时器不断重复这个动作
+        //4.加一个结束定时器的条件
+        //5.注意:此元素需要   添加定位  ，才能使用element.style.left
+        //1.
+        /*
+        var div = document.querySelector('div')
+        var timer = setInterval(function() {
+            if (div.offsetLeft >= 400) {
+                clearInterval(timer)
+            }
+            div.style.left = div.offsetLeft + 1 + 'px';
+        }, 30)
+        
+        //2.简单动画函数封装
+        function animate(obj, target) {
+            var timer = setInterval(function() {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 3)
+        }
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        animate(div, 400);
+        animate(span, 200);
+
+        //var obj={};
+        //obj.name='andy';
+        //3.简单的动画函数封装obj目标对象target目标位置
+        //给不同元素指定不同的定时器
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 3);
+        }
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        animate(div, 400);
+        btn.addEventListener('click', function() {
+            animate(span, 200);
+        })
+        
+
+        //4.缓动效果原理：元素速度有所变化，速度变下来
+        //原理：让盒子移动的距离慢慢变小
+        //2核心算法：（目标值-现在的位置）/10作为每次移动距离的长度
+        //3.停止条件：让当前位置等于目标位置停止计时器
+        function animate(obj, target) {
+
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 30)
+        }
+        var div = document.querySelector('div');
+        animate(div, 400);
+        //匀速动画:盒子当前位置+固定值10
+        //缓慢动画：盒子当前位置+（目标值-现在的位置）/10
+
+        //5.动画的函数封装
+        //动画从800移到500
+        //当我们点击按钮时，判断是正值还是负值；正值步长往大了取整；负值往小了取整
+        function animate(obj, target) {
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        var span = document.querySelector('span');
+        var div = document.querySelector('div');
+        var btn5 = document.querySelector('.btn500');
+        var btn8 = document.querySelector('.btn800');
+        animate(div, 400);
+        btn5.addEventListener('click', function() {
+            animate(span, 500);
+        })
+        btn8.addEventListener('click', function() {
+            animate(span, 800);
+        })
+        */
+
+        //6.缓动画添加回调函数
+        function animate(obj, target, callback) {
+            console.log(callback);
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+
+                    //回调函数写到定时器里面
+                    if (callback) {
+                        callback();
+                    }
+
+                }
+
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        var span = document.querySelector('span');
+        var div = document.querySelector('div');
+        var btn5 = document.querySelector('.btn500');
+        var btn8 = document.querySelector('.btn800');
+        animate(div, 400);
+        btn5.addEventListener('click', function() {
+
+            animate(span, 500, function() {
+                span.style.backgroundColor = 'yellow';
+            });
+
+        })
+        btn8.addEventListener('click', function() {
+            animate(span, 800);
+        })
+    </script>
+</body>
+
+</html>

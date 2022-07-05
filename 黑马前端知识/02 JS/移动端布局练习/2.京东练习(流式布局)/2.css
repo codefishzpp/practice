@@ -1,0 +1,155 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #666;
+	width: 100%;
+	margin:20px auto;
+	max-width: 670px;
+	min-width: 300px;
+	font: 14px/45px -apple-system,helvetica,sans-serif;
+	color: white;
+	text-align: center;
+	height: 2000px;
+}
+
+/*header*/
+.app {
+	overflow: hidden;
+	position: relative;
+}
+.app ul li{
+	float: left;
+	height: 45px;
+	list-style:none;
+	background-color: #666;
+}
+.app ul li:nth-child(1){
+	width: 8%;
+	background-color: #666;
+	
+} 
+.app ul li:nth-child(1) div{
+	position: absolute;
+	left: 14px;
+	top: 14px;
+	width: 25px;
+	height: 22px;
+	background: url(img/3.png) no-repeat -36px 0;
+	background-size:200px 200px;
+	}
+.app ul li:nth-child(2){
+	width: 10%;
+	
+}
+.app ul li:nth-child(2) img{
+	position: absolute;	
+	left:72px;
+	top:7px;
+	width: 40px;
+	height: 30px;
+}
+.app ul li:nth-child(3){
+	width: 57%;
+}
+.app ul li:nth-child(4){
+	width: 25%;
+	background-color:red;
+}
+
+/*header2*/
+ .header2{
+ 	width: 100%;
+	max-width: 670px;
+	min-width: 300px;
+ 	height: 44px;
+ 	overflow:hidden ;
+    position:fixed;
+}
+.header2 .c1{
+	position: absolute;	
+	left:0px;
+	top:0px;
+	width: 40px;
+	height: 44px;
+	background: url(img/1.png) no-repeat;
+	background-size: 20px 18px;
+	margin: 14px 0 0 15px;
+}
+.header2 .c2{
+	position: relative;
+	height: 33px;
+	background-color:white ;
+	margin: 0 50px;	
+	border-radius: 20px;
+	margin-top:5px ;	
+}
+.header2 .c2>.d1{
+	position: absolute;	
+	left:20px;
+	top:9px;
+	width:20px;
+	height: 15px;
+	background: url(img/2.png) no-repeat;
+	background-size: 20px 15px;
+	padding-right:5px ;	
+	border-right:2px solid rgb(221,221,221) ;
+}
+.header2 .c2 .d2{
+	position: absolute;	
+	left:53px;
+	top:9px;	
+	width:18px;
+	height: 15px;
+	background: url(img/3.png) no-repeat -83px 0;
+	background-size: 200px 200px;
+}
+.header2 .c3{
+	position: absolute;	
+	right:0px;
+	top :0px;
+	width: 40px;
+	height: 44px;
+}
+/*主题内容*/
+.zhuti .tp img{
+	width: 100%;
+}
+/*主体2*/
+.zhuti .tp2{
+	width: 100%;
+}
+.zhuti .tp2 a img{
+	width: 50px;
+}
+.zhuti .tp2 a{
+	float:left;
+	width:20%;
+	text-decoration: none;
+}
+.zhuti .tp2 span{
+	color: #666;	
+	display: block;
+	text-align: center;/*去除上面空格*/
+	vertical-align: top ;
+}
+/*dh*/
+.zhuti .dh div
+{
+	float: left;
+}
+.zhuti .dh div img
+{
+	border-radius: 20px 20px 20px 20px;
+	vertical-align: top ;
+	width: 100%;
+}
+.zhuti .dh div:nth-child(1){
+	border-radius: 20px 0 0 0;
+	width: 60%;	
+}
+.zhuti .dh div:nth-child(n+2){
+	border-left: 1px solid #FF0000;
+	width: 20%;
+}

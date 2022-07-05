@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../3.阿里百秀/bootstrap/css/bootstrap.min.css">
+    <style>
+        div {
+            width: 70%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .d1 {
+            background-color: blue;
+        }
+        
+        .d2 {
+            background-color: cadetblue;
+        }
+        
+        .d3 {
+            background-color: crimson;
+        }
+        
+        .d4 {
+            position: relative;
+            position: absolute;
+            top: 400px;
+            right: 40px;
+            width: 70px;
+            height: 400px;
+            background-color: rgb(206, 119, 152);
+        }
+        
+        p {
+            margin-top: 40px;
+            width: 100%;
+            font-size: 15px;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        
+        .p {
+            display: none;
+            width: 100%;
+            font-size: 15px;
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="height: 5000px;">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4">
+        <p>猜你喜欢</p>
+        <a href="javascript:;" class="p">返回顶部</a>
+    </div>
+    <script>
+        var d4 = document.querySelector('.d4');
+        var a = document.querySelector('.p');
+        var d4Top = d4.offsetTop;
+        document.addEventListener('scroll', function() {
+                //window.pageYoffset页面被卷取的头部
+                // if (window.pageYOffset >= 400) {
+                if (window.pageYOffset >= d4Top) {
+                    d4.style.position = 'fixed';
+                    d4.style.top = 0;
+                    a.style.display = 'block'
+                } else {
+                    d4.style.position = 'absolute';
+                    d4.style.top = 400 + 'px';
+                    a.style.display = 'none'
+
+                }
+            })
+            //滚动窗口至文档中的特点位置window.scroll(x,y)
+        a.addEventListener('click', function() {
+            window.scroll(0, 0); //window.scroll(x, y);
+        })
+    </script>
+</body>
+
+</html>

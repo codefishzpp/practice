@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+
+<body>
+    <div>111111111</div>
+    <script>
+        //事件被触发就会有事件对象产生
+        //element.on(event, [selection], function(event) {})
+        //阻止默认行为：event.preventDefault()/return falas
+        //阻止冒泡：event.stopPropagation()
+        $(document).on('click', function() {
+            console.log('点击了document');
+
+        })
+        $('div').on('click', function(event) {
+            console.log('点击了div');
+            event.stopPropagation(); //阻止冒泡
+        })
+    </script>
+</body>
+
+</html>

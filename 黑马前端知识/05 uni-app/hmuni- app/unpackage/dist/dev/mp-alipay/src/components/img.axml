@@ -1,0 +1,1 @@
+<image class="img-border" src="{{src}}" data-event-opts="{{[['tap',[['handleClick',['$event']]]]]}}" onTap="__e"></image>

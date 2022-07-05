@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合</title>
+</head>
+
+<body>
+    <script>
+        //声明一个set
+        let s = new Set();
+
+        //自动去重
+        let s2 = new Set([1, 2, 3, 4, 1]);
+        console.log(s2);
+
+        //元素个数
+        console.log(s2.size);
+
+        //添加新元素
+        console.log(s2.add('xishi'));
+
+        //删除元素
+        console.log(s2.delete('xishi')); //true
+        console.log(s2);
+
+        //检测
+        console.log(s2.has(2)); //true
+
+        //清空
+        // console.log(s2.clear());
+        console.log(s2);
+    </script>
+</body>
+
+</html>
